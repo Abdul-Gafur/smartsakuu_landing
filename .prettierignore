@@ -3,3 +3,4 @@ node_modules
 out
 coverage
 pnpm-lock.yaml
+public/index.html

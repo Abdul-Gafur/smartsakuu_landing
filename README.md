@@ -1,8 +1,39 @@
 # SmartSakuu frontend
 
-Production-ready frontend foundation for SmartSakuu, built with Next.js, React,
-TypeScript, Tailwind CSS, and `next-intl`. This repository currently contains
-only project infrastructure and a minimal localized verification page.
+Frontend foundation for SmartSakuu, built with Next.js, React, TypeScript,
+Tailwind CSS, and `next-intl`, with a standalone landing page in `index.html`.
+
+## Landing page
+
+Edit the root `index.html` for the landing page's structure, styles, and
+interactions. It can be opened directly as a file, or served at
+`http://localhost:3000/index.html` after `pnpm dev`. Development and build
+commands generate `public/index.html` automatically with the asset paths
+adjusted for Next.js. Run `pnpm landing:sync` after editing during an existing
+development session, then refresh the browser. Do not edit the generated copy.
+
+This English landing-page artifact is separate from the locale routes below;
+it does not redirect or replace the multilingual App Router foundation.
+Local images and their credits are in `public/assets/smartsakuu/`.
+
+The page includes keyboard-operable role/story tabs, an interactive comparison
+of a score and connected record, a mobile menu, and a demo-request dialog that
+prepares an email. No submission backend is connected. Stories are explicitly
+illustrative; approved headteacher interviews, names and quotes must be
+supplied before publishing real testimonials.
+
+The three school-story players stream illustrative footage from Pexels and
+require a network connection. Their source links and credits appear below the
+stories on the page. Replace these clips with approved SmartSakuu interviews
+before describing them as real school testimonials. The Responsible AI card
+motion is implemented in CSS and JavaScript; the supplied short video was used
+only as a visual reference and is not shipped with the site. Motion respects
+the user's reduced-motion setting.
+
+The supplied references inform the section order: hero, school overview,
+problem, learning context, how it works, AI by role, school stories,
+institutional memory, responsible AI, Ghana, headteacher stories, and contact.
+The production build uses webpack, as configured in the original foundation.
 
 ## Prerequisites
 
