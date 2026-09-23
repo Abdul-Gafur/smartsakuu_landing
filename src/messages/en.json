@@ -1,0 +1,12 @@
+{
+  "Metadata": {
+    "siteName": "SmartSakuu",
+    "title": "SmartSakuu",
+    "description": "SmartSakuu multilingual application foundation."
+  },
+  "HomePage": {
+    "status": "Setup complete",
+    "title": "SmartSakuu foundation",
+    "description": "This placeholder verifies that localized routing and translations are configured."
+  }
+}
