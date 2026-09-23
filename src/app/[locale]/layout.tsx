@@ -1,10 +1,21 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import { getLocaleDirection, routing } from "@/i18n/routing";
 import "@/styles/globals.css";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-plus-jakarta-sans",
+});
+
+export const viewport: Viewport = {
+  themeColor: "#022c7e",
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -29,6 +40,13 @@ export async function generateMetadata({
       template: `%s | ${t("siteName")}`,
     },
     description: t("description"),
+    openGraph: {
+      type: "website",
+      siteName: t("siteName"),
+      title: t("title"),
+      description: t("description"),
+      locale,
+    },
     alternates: {
       canonical: `/${locale}`,
       languages: Object.fromEntries(
@@ -57,9 +75,11 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={getLocaleDirection(locale)}
-      className="h-full antialiased"
+      className={plusJakartaSans.variable}
+      // Keeps in-page anchor scrolling smooth without animating route changes.
+      data-scroll-behavior="smooth"
     >
-      <body className="flex min-h-full flex-col">
+      <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>

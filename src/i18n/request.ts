@@ -1,6 +1,9 @@
 import { hasLocale } from "next-intl";
 import { getRequestConfig } from "next-intl/server";
 
+import defaultMessages from "@/messages/en.json";
+import { deepMerge } from "@/utils/deep-merge";
+
 import { routing } from "./routing";
 
 export default getRequestConfig(async ({ requestLocale }) => {
@@ -9,8 +12,13 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? requestedLocale
     : routing.defaultLocale;
 
-  return {
-    locale,
-    messages: (await import(`../messages/${locale}.json`)).default,
-  };
+  if (locale === routing.defaultLocale) {
+    return { locale, messages: defaultMessages };
+  }
+
+  // English is the source catalog; keys a locale has not translated yet fall
+  // back to it instead of rendering missing-message errors.
+  const localeMessages = (await import(`../messages/${locale}.json`)).default;
+
+  return { locale, messages: deepMerge(defaultMessages, localeMessages) };
 });

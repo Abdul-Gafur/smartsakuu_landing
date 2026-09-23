@@ -1,0 +1,154 @@
+.section {
+  position: relative;
+  min-height: 180vh;
+  padding-block: 0;
+  background: #fff;
+}
+.stage {
+  position: sticky;
+  top: 100px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  min-height: calc(100vh - 100px);
+  align-items: center;
+  gap: 75px;
+  padding-block: 14px;
+}
+.intro {
+  max-width: 540px;
+  text-align: start;
+}
+.label {
+  margin-block-end: 20px;
+}
+.body {
+  max-width: 53ch;
+  margin-block-start: 23px;
+  font-size: 15px;
+}
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-block-start: 27px;
+  font-size: 10px;
+  font-weight: 650;
+  color: #216b60;
+}
+.flow span {
+  padding: 8px 13px;
+  background: var(--mint);
+  border-radius: 4px;
+}
+
+/* The overlapping cards resolve into a grid as `--align` goes from 0 to 1. */
+.principles {
+  --align: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  isolation: isolate;
+}
+.principles article {
+  --dx: 0%;
+  --dy: 0%;
+  --rot: 0deg;
+  position: relative;
+  min-height: 220px;
+  padding: 27px 27px;
+  border-radius: 18px;
+  transform: translate(
+      calc(var(--dx) * (1 - var(--align))),
+      calc(var(--dy) * (1 - var(--align)))
+    )
+    rotate(calc(var(--rot) * (1 - var(--align))));
+  will-change: transform;
+}
+.principles article:nth-child(1) {
+  --dx: 24%;
+  --dy: 27%;
+  --rot: -8deg;
+  z-index: 1;
+  background: #e1dcff;
+}
+.principles article:nth-child(2) {
+  --dx: -23%;
+  --dy: 22%;
+  --rot: 7deg;
+  z-index: 4;
+  background: #dceaff;
+}
+.principles article:nth-child(3) {
+  --dx: 25%;
+  --dy: -26%;
+  --rot: 6deg;
+  z-index: 2;
+  background: #dde2ff;
+}
+.principles article:nth-child(4) {
+  --dx: -21%;
+  --dy: -23%;
+  --rot: -6deg;
+  z-index: 3;
+  background: #ffe8d0;
+}
+.principles h3 {
+  font-size: 17px;
+}
+.principles p {
+  max-width: 34ch;
+  margin-block-start: 9px;
+  color: #45546d;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-height: 780px) and (min-width: 801px) {
+  .stage {
+    gap: 54px;
+    padding-block: 10px;
+  }
+  .principles article {
+    min-height: 195px;
+    padding: 21px 22px;
+  }
+}
+@media (max-width: 800px) {
+  .section {
+    min-height: 0;
+    padding-block: 72px;
+  }
+  .stage {
+    position: static;
+    min-height: 0;
+    padding-block: 0;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .principles {
+    --align: 1;
+  }
+  .principles article {
+    transform: none;
+    will-change: auto;
+  }
+}
+@media (max-width: 560px) {
+  .section {
+    padding-block: 60px;
+  }
+  .principles {
+    grid-template-columns: 1fr;
+  }
+  .principles article {
+    min-height: auto;
+    padding: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .principles article {
+    transform: none;
+  }
+}

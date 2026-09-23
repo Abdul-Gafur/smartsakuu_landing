@@ -1,12 +1,578 @@
 {
   "Metadata": {
     "siteName": "SmartSakuu",
-    "title": "SmartSakuu",
-    "description": "SmartSakuu multilingual application foundation."
+    "title": "SmartSakuu | Run the school. Understand every learner.",
+    "description": "SmartSakuu connects school operations, teaching, student learning and AI support in one student record. Built with Ghanaian schools, for African education."
   },
-  "HomePage": {
-    "status": "Setup complete",
-    "title": "SmartSakuu foundation",
-    "description": "This placeholder verifies that localized routing and translations are configured."
+  "Landing": {
+    "Common": {
+      "skipLink": "Skip to content",
+      "brandName": "SmartSakuu",
+      "brandHome": "SmartSakuu home",
+      "bookDemo": "Book a school demo"
+    },
+    "Header": {
+      "navLabel": "Main navigation",
+      "nav": {
+        "problem": "Why SmartSakuu",
+        "record": "How it works",
+        "roles": "AI for schools",
+        "stories": "Our stories"
+      },
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
+    },
+    "Hero": {
+      "title": "Run the school.<br></br>Understand every learner.",
+      "body": "Admissions, fees, lessons, assessments and an AI tutor. One connected student record, so everyone in your school works from the same picture.",
+      "howItWorks": "See how it works",
+      "footnote": "For school leaders, teachers, students and parents.",
+      "studentsImageAlt": "Schoolchildren working together on their lessons",
+      "teacherImageAlt": "A teacher guiding a classroom discussion",
+      "schoolNote": {
+        "eyebrow": "A school that stays connected",
+        "title": "One record.<br></br>A fuller picture.",
+        "footer": "From admission to exam day"
+      },
+      "learningNote": {
+        "title": "A little context.<br></br>A better next step.",
+        "body": "AI support grounded in what your school already knows."
+      },
+      "caption": "People at the centre. Always."
+    },
+    "Platform": {
+      "label": "One platform for the whole school",
+      "items": {
+        "operations": {
+          "title": "School operations",
+          "body": "Admissions, attendance, fees, HR and reporting."
+        },
+        "teaching": {
+          "title": "Teaching & assessment",
+          "body": "Curriculum, lessons, examinations and class performance."
+        },
+        "learning": {
+          "title": "Student learning",
+          "body": "LMS, AI tutor, past questions, revision and targeted practice."
+        },
+        "community": {
+          "title": "Parents & school leaders",
+          "body": "The same record, with a view appropriate to each role."
+        }
+      }
+    },
+    "Problem": {
+      "label": "The problem",
+      "title": "A school sees the score. But not always the story behind it.",
+      "body": "Admissions, fees, examinations, attendance and learning often sit in separate systems. Staff have to piece a learner’s story together before they can understand what is happening. By then, the term may be over.",
+      "score": {
+        "sampleLabel": "Illustrative learner record · JHS 2B",
+        "value": "48%",
+        "title": "Mathematics,<br></br>end of term.",
+        "body": "The number gives the result. It doesn’t explain a persistent algebra gap, too little practice, or another pattern that needs attention.",
+        "caption": "There is more to this learner’s story."
+      },
+      "evidence": {
+        "controlsLabel": "Compare a score with the connected record",
+        "scoreView": "The score alone",
+        "recordView": "The connected record",
+        "rows": {
+          "history": {
+            "term": "Assessment history",
+            "value": "61% to 48%. Performance is declining across the term.",
+            "empty": "The end-of-term score doesn’t show the trend."
+          },
+          "mastery": {
+            "term": "Topic mastery",
+            "value": "Algebra is the persistent weak area across quizzes and tests.",
+            "empty": "The specific learning gap isn’t visible."
+          },
+          "activity": {
+            "term": "Learning activity",
+            "value": "Only 2 of 12 algebra practice tasks attempted.",
+            "empty": "Practice activity lives in another system."
+          },
+          "attendance": {
+            "term": "Attendance context",
+            "value": "96% attendance. Healthy, so the school can focus on the actual cause.",
+            "empty": "Attendance is kept in a separate register."
+          }
+        },
+        "result": "Connect the evidence early enough to respond to the actual learning gap.",
+        "resultEmpty": "The next step stays unclear until someone collects the evidence by hand."
+      }
+    },
+    "Why": {
+      "label": "Why this matters",
+      "title": "Every learning gap deserves an earlier response.",
+      "body": "Ghana’s learning challenge makes timely insight urgent. Connecting what a school already knows can help teachers see who needs support, and where to start.",
+      "stats": {
+        "literacy": {
+          "value": "60%+",
+          "body": "of children do not achieve basic literacy and numeracy by the end of primary school."
+        },
+        "schooling": {
+          "value": "11.6 → 5.7",
+          "body": "years of schooling compared with effective learning years."
+        }
+      },
+      "source": "Source: UNICEF Ghana, Education Budget Brief 2025 ↗",
+      "imageAlt": "Students concentrating on their schoolwork together",
+      "stepsLabel": "From understanding to support",
+      "steps": {
+        "understand": {
+          "label": "Understand",
+          "title": "See the learner’s actual level",
+          "body": "Bring assessments, academic history, curriculum progress and LMS activity into one picture."
+        },
+        "identify": {
+          "label": "Identify",
+          "title": "Find what needs attention",
+          "body": "Detect persistent weak topics and patterns instead of relying on one final score."
+        },
+        "support": {
+          "label": "Support",
+          "title": "Direct the right next step",
+          "body": "Recommend lessons, practice, revision, teacher follow-up or parent support while there is still time to improve."
+        },
+        "connect": {
+          "label": "Connect",
+          "title": "Keep progress in the same record",
+          "body": "What the student learns digitally feeds back into the educational record the school already uses."
+        }
+      },
+      "caption": "The opportunity is to connect what schools already know, early enough to help."
+    },
+    "Record": {
+      "label": "How it works",
+      "title": "One record per learner.<br></br>From admission to exam day.",
+      "body": "Every part of school life adds to the same record. Every person gets the view that fits their role, and nothing more.",
+      "inputs": {
+        "title": "What goes in",
+        "items": {
+          "operations": {
+            "title": "School operations",
+            "body": "Admissions, attendance, fees and HR"
+          },
+          "curriculum": {
+            "title": "Curriculum",
+            "body": "GES / NaCCA strands and indicators"
+          },
+          "assessments": {
+            "title": "Assessments",
+            "body": "Tests, exams and continuous assessment"
+          },
+          "learning": {
+            "title": "Learning",
+            "body": "LMS lessons, quizzes and past questions"
+          }
+        }
+      },
+      "core": {
+        "title": "Connected student record",
+        "sample": "Sample learner · JHS 2B",
+        "fields": {
+          "history": { "term": "Academic history", "value": "3 terms" },
+          "focus": { "term": "Learning focus", "value": "Linear equations" },
+          "curriculum": {
+            "term": "Curriculum progress",
+            "value": "Strand 2 of 4"
+          },
+          "activity": {
+            "term": "Learning activity",
+            "value": "9 tasks this week"
+          },
+          "attendance": { "term": "Attendance", "value": "96%" },
+          "support": { "term": "Support given", "value": "Targeted revision" }
+        },
+        "note": "Illustrative record. Access is appropriate to each role."
+      },
+      "outputs": {
+        "title": "Who it helps",
+        "items": {
+          "students": {
+            "title": "Students",
+            "body": "A learning path that reflects their gaps"
+          },
+          "teachers": {
+            "title": "Teachers",
+            "body": "Lesson plans shaped by class performance"
+          },
+          "parents": {
+            "title": "Parents",
+            "body": "Their own child’s progress and next step"
+          },
+          "leaders": {
+            "title": "School leaders",
+            "body": "Answers traced back to school records"
+          }
+        }
+      },
+      "day": {
+        "title": "A normal school day keeps the record current.",
+        "steps": {
+          "arrive": {
+            "time": "07:30",
+            "title": "Arrive",
+            "body": "Take attendance as the school day begins."
+          },
+          "teach": {
+            "time": "09:00",
+            "title": "Teach",
+            "body": "Plan with last week’s results in view."
+          },
+          "assess": {
+            "time": "11:30",
+            "title": "Assess",
+            "body": "Quiz marks update topic mastery."
+          },
+          "learn": {
+            "time": "16:00",
+            "title": "Learn",
+            "body": "Practise the topic that needs attention."
+          },
+          "support": {
+            "time": "19:00",
+            "title": "Support",
+            "body": "Parents know how to help at home."
+          }
+        }
+      }
+    },
+    "Roles": {
+      "label": "AI that knows the school",
+      "title": "Better support starts with the right context.",
+      "body": "Generic AI starts from a blank prompt. SmartSakuu starts from the school’s record, curriculum and learning progress.",
+      "tablistLabel": "AI support by role",
+      "tabs": {
+        "students": "Students",
+        "teachers": "Teachers",
+        "leaders": "School leaders"
+      },
+      "panels": {
+        "students": {
+          "title": "Learning that starts from what the student already knows.",
+          "body": "Assessment history, topic mastery and learning activity help identify gaps and guide what the learner should do next.",
+          "benefits": {
+            "pathway": {
+              "title": "Personalised learning pathway",
+              "body": "Focus on weak topics, instead of revising everything."
+            },
+            "tutor": {
+              "title": "A contextual AI tutor",
+              "body": "Step-by-step guidance that reflects the learner’s actual gaps."
+            },
+            "exams": {
+              "title": "Exam preparation",
+              "body": "BECE / WASSCE practice connected to school performance."
+            }
+          },
+          "imageAlt": "Students learning side by side",
+          "captionTitle": "From “I don’t understand” to “I know where to start.”",
+          "caption": "Lessons, practice and support connected to one learner."
+        },
+        "teachers": {
+          "title": "Plan tomorrow’s lesson with today’s results beside you.",
+          "body": "Choose the class, subject, strand and indicator. SmartSakuu drafts a lesson plan you can edit, with activities shaped around your actual class.",
+          "benefits": {
+            "time": {
+              "title": "Time back for teaching",
+              "body": "Editable lesson plans, notes, quizzes and homework."
+            },
+            "levels": {
+              "title": "Support for different starting points",
+              "body": "Support, core and stretch activities based on class performance."
+            },
+            "control": {
+              "title": "The teacher stays in control",
+              "body": "Review, adapt and approve before anything reaches learners."
+            }
+          },
+          "imageAlt": "Illustrative SmartSakuu lesson plan with learning outcomes and differentiated activities",
+          "captionTitle": "Built around the lesson you need to teach.",
+          "caption": "An illustrative JHS 2B lesson on linear equations."
+        },
+        "leaders": {
+          "title": "Ask about your school. Get answers from its records.",
+          "body": "Authorised leaders can ask plain questions about learners, fees and attendance. Answers connect back to the source data.",
+          "benefits": {
+            "attention": {
+              "title": "Know what needs attention",
+              "body": "Learners needing support, by class and topic."
+            },
+            "operations": {
+              "title": "See the operational picture",
+              "body": "Fees outstanding and changes in attendance, in context."
+            },
+            "knowledge": {
+              "title": "Keep institutional knowledge",
+              "body": "Follow long-term trends even when staff or leadership change."
+            }
+          }
+        }
+      }
+    },
+    "LeaderAi": {
+      "name": "School AI",
+      "badge": "Illustrative demo · sample school data",
+      "empty": "Ask a plain question. Answers come from the school’s authorised records.",
+      "placeholder": "Ask about your school…",
+      "inputLabel": "Ask School AI about your school",
+      "send": "Send question",
+      "prompts": {
+        "attention": "What requires my attention today?",
+        "maths": "Which classes are behind in maths?",
+        "fees": "How are fee payments this term?"
+      },
+      "answers": {
+        "attention": {
+          "lines": [
+            "Three things need attention today:",
+            "• JHS 2B — 9 learners scored below 40% on linear equations, and it has been two weeks since the topic was re-taught.",
+            "• Attendance — JHS 1A is down 12% this week, mostly on Mondays and Fridays.",
+            "• Fees — 14 families have second-term balances more than 30 days overdue."
+          ],
+          "sources": "Sources: Term 2 assessments · Daily register · Fee ledger"
+        },
+        "maths": {
+          "lines": [
+            "JHS 2B and JHS 3A are furthest behind in mathematics this term.",
+            "• JHS 2B averages 46% on algebra, down from 58% in Term 1.",
+            "• In JHS 3A, 11 learners are below the BECE-ready mark in number and fractions.",
+            "Suggested next step: a focused revision block on linear equations for JHS 2B next week."
+          ],
+          "sources": "Sources: Class exercises · Mid-term tests · Curriculum tracker"
+        },
+        "fees": {
+          "lines": [
+            "Second-term collection is at 72% of expected fees.",
+            "• GH₵ 18,400 is outstanding across 41 learners.",
+            "• 14 accounts are more than 30 days overdue; 6 of those have agreed payment plans."
+          ],
+          "sources": "Sources: Fee ledger · Payment records"
+        },
+        "attendance": {
+          "lines": [
+            "Attendance this week is 91%, down from 94% last week.",
+            "• JHS 1A has the largest drop (−12%), mostly on Mondays and Fridays.",
+            "• 5 learners have missed three or more days this fortnight."
+          ],
+          "sources": "Sources: Daily register"
+        },
+        "other": {
+          "lines": [
+            "In a live school, I would answer that from your authorised records: assessments, attendance, fees and learning activity.",
+            "In this demo, try asking about attention today, maths progress, fees or attendance."
+          ],
+          "sources": "Sources: Sample school data"
+        }
+      }
+    },
+    "Stories": {
+      "label": "Stories from schools",
+      "title": "One school. Different days.<br></br>A shared picture.",
+      "tablistLabel": "School stories by audience",
+      "tabs": {
+        "students": "Students",
+        "teachers": "Teachers",
+        "parents": "Parents"
+      },
+      "previous": "Previous story",
+      "next": "Next story",
+      "videoFallback": "Your browser does not support video playback.",
+      "slides": {
+        "students": {
+          "videoLabel": "Illustrative video of students learning together",
+          "eyebrow": "A student’s school day",
+          "title": "A difficult topic.<br></br>A clearer way forward.",
+          "body": "A low algebra score becomes a starting point. The learning path suggests focused practice, and the AI tutor guides the learner through the step they keep missing.",
+          "cta": "Explore student support"
+        },
+        "teachers": {
+          "videoLabel": "Illustrative video of a teacher working with students",
+          "eyebrow": "A teacher’s school day",
+          "title": "Less time piecing things together. More time teaching.",
+          "body": "Recent quiz results show where the class is struggling. The teacher adapts a lesson draft, sets different practice for each group, and follows up with learners who need more help.",
+          "cta": "Explore teacher support"
+        },
+        "parents": {
+          "videoLabel": "Illustrative video of parents helping a child with homework",
+          "eyebrow": "A parent’s school day",
+          "title": "Know how to help before the report card arrives.",
+          "body": "A parent sees their own child’s progress, this week’s learning focus and a note from the teacher. The conversation at home starts with one clear thing to practise.",
+          "cta": "See the parent view in a demo"
+        }
+      },
+      "disclosure": "Illustrative school-day stories showing how SmartSakuu is designed to help. These stock-video scenes are not customer interviews. Footage: <students>Monstera Production</students>, <teachers>Pavel Danilyuk</teachers>, and <parents>Dziana Hasanbekava</parents> / Pexels."
+    },
+    "Memory": {
+      "label": "Institutional memory",
+      "title": "The school’s knowledge should survive a handover.",
+      "body": "Student history, learning progress, fee records and previous interventions remain with the institution when staff or leadership change.",
+      "steps": {
+        "baseline": {
+          "title": "Establish the baseline",
+          "body": "Keep assessment results connected to the learner."
+        },
+        "tried": {
+          "title": "Remember what was tried",
+          "body": "Record targeted support for persistent learning gaps."
+        },
+        "build": {
+          "title": "Build on what the school knows",
+          "body": "Follow progress and outcomes across terms and years."
+        }
+      },
+      "example": {
+        "eyebrow": "A question for School AI",
+        "question": "“How has Mathematics performance changed over the last three years?”",
+        "answer": "SmartSakuu can use authorised historical records to surface trends, identify persistent weak areas and connect the answer to relevant classes, assessments and interventions.",
+        "tags": {
+          "assessments": "Assessment history",
+          "classes": "Class records",
+          "interventions": "Interventions"
+        },
+        "note": "An example question. Answers depend on the records available to the school."
+      }
+    },
+    "Responsible": {
+      "label": "Responsible AI",
+      "title": "AI supports the decision. People remain responsible for it.",
+      "body": "SmartSakuu is designed around human oversight, appropriate access and educational context. Teachers review, edit and approve AI-generated activities before they reach a class.",
+      "flowLabel": "AI drafts, teacher reviews, teacher approves",
+      "flow": {
+        "drafts": "AI drafts",
+        "reviews": "Teacher reviews",
+        "approves": "Teacher approves"
+      },
+      "principles": {
+        "control": {
+          "title": "Teacher control",
+          "body": "Lesson plans, notes, quizzes and activities stay under teacher review and adaptation."
+        },
+        "access": {
+          "title": "Role-based access",
+          "body": "A parent sees their own child. Staff see only the school information their role permits."
+        },
+        "support": {
+          "title": "Student support",
+          "body": "AI guides learning and practice. It does not make autonomous high-stakes decisions about a learner."
+        },
+        "context": {
+          "title": "Context over generic AI",
+          "body": "Guidance is grounded in the curriculum, learning progress and authorised school information."
+        }
+      }
+    },
+    "Ghana": {
+      "title": "Built with Ghanaian schools, not only for them.",
+      "body": "SmartSakuu is operational and being used by schools in Ghana to support teaching, learning and examination preparation. The next phase is stronger measurement, wider adoption and responsible scaling.",
+      "facts": {
+        "platform": {
+          "title": "One operational platform",
+          "body": "School operations, teaching and learning connected in one environment."
+        },
+        "settings": {
+          "title": "Real school settings",
+          "body": "Supporting the daily work of Ghanaian schools beyond a prototype."
+        },
+        "gnaps": {
+          "title": "Wa Municipal GNAPS",
+          "body": "Partnership with the Ghana National Association of Private Schools at municipal level."
+        },
+        "curriculum": {
+          "title": "Built for the curriculum",
+          "body": "GES / NaCCA structure and BECE / WASSCE preparation built into the product."
+        }
+      }
+    },
+    "Headteachers": {
+      "label": "Headteachers’ stories",
+      "title": "Real schools. Real leaders.<br></br>A clearer picture.",
+      "body": "What does a connected school record change for a headteacher? The questions they can ask. The patterns they can see. The learners they can support sooner.",
+      "previous": "Previous story",
+      "next": "Next story",
+      "dotsLabel": "Headteacher stories",
+      "dotLabel": "Story {index} of {total}",
+      "play": "Play video",
+      "stories": {
+        "kumasi": {
+          "videoLabel": "A headteacher smiling in front of her classroom whiteboard",
+          "quote": "Mock results arrived in three different spreadsheets. With every assessment in one record, the headteacher could see which JHS 3 learners were slipping in mathematics weeks before BECE, and plan extra support while there was still time.",
+          "role": "Headteacher, public JHS",
+          "place": "Kumasi, Ashanti, Ghana"
+        },
+        "accra": {
+          "videoLabel": "A school leader standing in a classroom while learners work",
+          "quote": "Parent meetings used to start with a search for paperwork. Now the head opens one learner’s record — attendance, fees and progress together — and the conversation moves straight to what the family and school will do next.",
+          "role": "Proprietor and head, private basic school",
+          "place": "Accra, Greater Accra, Ghana"
+        },
+        "tamale": {
+          "videoLabel": "An educator checking learners’ written work at their desks",
+          "quote": "When two experienced teachers transferred mid-year, their notes on learners didn’t leave with them. The new staff picked up each class with its history intact, and the head could still ask how every group had progressed.",
+          "role": "Headteacher, community basic school",
+          "place": "Tamale, Northern, Ghana"
+        },
+        "takoradi": {
+          "videoLabel": "A headteacher standing proudly beside a learner",
+          "quote": "Between report cards, families had little to go on. Short progress notes drawn from the same record now go home every fortnight, so fewer conversations at PTA meetings begin with surprise.",
+          "role": "Assistant head, mission JHS",
+          "place": "Takoradi, Western, Ghana"
+        }
+      },
+      "cta": "Explore the school leader’s view",
+      "disclosure": "Illustrative stories based on common school scenarios, not customer interviews. Approved headteacher testimonials are coming soon.<br></br>Stock footage, no endorsement implied: <kumasi>Katerina Holmes</kumasi>, <accra>Yan Krukau</accra> and <tamale>Andy Barbour</tamale> / Pexels."
+    },
+    "Contact": {
+      "label": "Your school. One connected platform.",
+      "title": "See what changes when the whole school works from the same picture.",
+      "body": "We’ll walk through admissions, attendance, fees, assessment, teaching and student learning around the way your school already operates.",
+      "demoEmailSubject": "School demo request",
+      "talk": "Talk to the SmartSakuu team",
+      "imageAlt": "Schoolchildren learning together in the classroom"
+    },
+    "Footer": {
+      "tagline": "© {year} SmartSakuu. The AI-powered operating system for African schools.<br></br>Starting in Ghana. Built around people."
+    },
+    "DemoDialog": {
+      "title": "Let’s talk about your school.",
+      "close": "Close demo request",
+      "intro": "Tell us a little about your school. We’ll prepare an email you can send to the SmartSakuu team to arrange a walkthrough.",
+      "fields": {
+        "school": "School name",
+        "name": "Your name",
+        "role": "Your role",
+        "phone": "Phone or WhatsApp",
+        "size": "Number of learners"
+      },
+      "roleOptions": {
+        "head": "Headteacher or owner",
+        "admin": "Administrator",
+        "teacher": "Teacher",
+        "parent": "Parent",
+        "district": "District / Association",
+        "other": "Other"
+      },
+      "sizeOptions": {
+        "under200": "Under 200",
+        "to500": "200 to 500",
+        "to1000": "500 to 1,000",
+        "over1000": "Over 1,000"
+      },
+      "submit": "Prepare demo request",
+      "note": "Opens your email app. Your request is sent only when you send the email.<br></br>Or write directly to <link>{email}</link>.",
+      "status": "Your email draft is ready. Send it from your email app to complete your request. If the app didn’t open, use the email link above.",
+      "required": "Please fill in this field.",
+      "email": {
+        "subject": "Demo request",
+        "school": "School",
+        "name": "Name",
+        "role": "Role",
+        "phone": "Phone/WhatsApp",
+        "learners": "Learners",
+        "closing": "I would like to arrange a SmartSakuu school demo."
+      }
+    }
   }
 }

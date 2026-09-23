@@ -1,29 +1,306 @@
 @import "tailwindcss";
 
+/*
+ * Global styles are limited to design tokens, element defaults and a few
+ * shared primitives. Component styles live in co-located CSS Modules, which
+ * are unlayered and therefore always win over the layered rules below.
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #022c7e;
+  --ink: #112448;
+  --blue: #005ce0;
+  --teal: #09c6b9;
+  --mint: #dbf2ec;
+  --paper: #f4f6fa;
+  --muted: #53627b;
+  --white: #fff;
+  --max: 1220px;
+  --font-body: var(--font-plus-jakarta-sans), Arial, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --color-navy: var(--navy);
+  --color-ink: var(--ink);
+  --color-blue: var(--blue);
+  --color-teal: var(--teal);
+  --color-mint: var(--mint);
+  --color-paper: var(--paper);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-body);
 }
 
-* {
-  box-sizing: border-box;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--white);
+    font: 400 16px/1.7 var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  figure {
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.15;
+    letter-spacing: -0.045em;
+    font-weight: 750;
+  }
+  h1 {
+    font-size: clamp(40px, 4.7vw, 66px);
+  }
+  h2 {
+    font-size: clamp(32px, 3.45vw, 47px);
+  }
+  h3 {
+    font-size: 23px;
+    letter-spacing: -0.025em;
+  }
+  /* Preflight removes link underlines; restore the browser default. */
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  svg {
+    flex-shrink: 0;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  :focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 5px;
+  }
+
+  @media (max-width: 560px) {
+    h2 {
+      font-size: 32px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
 }
 
-html {
-  background: var(--background);
-  color: var(--foreground);
-}
+@layer components {
+  .wrap {
+    width: min(var(--max), calc(100% - 80px));
+    margin-inline: auto;
+  }
+  .section {
+    padding-block: 104px;
+  }
+  .label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+    margin-block-end: 22px;
+  }
+  .body-copy {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.85;
+  }
+  .section-intro {
+    display: grid;
+    grid-template-columns: 1.03fr 1fr;
+    gap: 100px;
+    align-items: end;
+    margin-block-end: 50px;
+  }
+  .section-intro h2 {
+    max-width: 20ch;
+  }
+  .section-intro > p {
+    padding-block-end: 4px;
+  }
 
-body {
-  margin: 0;
-  font-family: var(--font-sans);
-}
+  .button {
+    display: inline-flex;
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 13px 24px;
+    color: white;
+    background: var(--blue);
+    border: 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    transition: background 0.2s;
+  }
+  .button:hover {
+    background: var(--navy);
+  }
+  .button-secondary {
+    background: #fff;
+    color: var(--navy);
+  }
+  .button-secondary:hover {
+    background: var(--mint);
+  }
+  .button svg,
+  .text-link svg {
+    width: 18px;
+    height: 18px;
+  }
+  .text-link {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    min-height: 44px;
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+  }
+  .text-link:hover {
+    text-decoration: underline;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 26px;
+    margin-block-start: 32px;
+  }
 
-/* Prefer logical properties (inline/block) in future styles to preserve RTL. */
+  .arrow-button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #cfd6e2;
+    border-radius: 50%;
+    background: white;
+    color: var(--navy);
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+  .arrow-button:hover:not(:disabled) {
+    background: var(--navy);
+    color: white;
+  }
+  .arrow-button:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+  .arrow-button svg {
+    width: 18px;
+    height: 18px;
+  }
+  .arrow-button[data-direction="previous"] svg {
+    transform: rotate(180deg);
+  }
+
+  .disclosure {
+    color: var(--muted);
+    font-size: 10px;
+    margin-block-start: 18px;
+  }
+  .disclosure a {
+    color: inherit;
+    text-underline-offset: 2px;
+  }
+
+  .skip-link {
+    position: fixed;
+    inset-block-start: -70px;
+    inset-inline-start: 20px;
+    z-index: 100;
+    background: white;
+    padding: 12px;
+  }
+  .skip-link:focus {
+    inset-block-start: 12px;
+  }
+
+  @media (max-width: 1050px) {
+    .wrap {
+      width: calc(100% - 56px);
+    }
+    .section-intro {
+      gap: 48px;
+    }
+  }
+  @media (max-width: 800px) {
+    .section {
+      padding-block: 72px;
+    }
+    .section-intro {
+      gap: 28px;
+    }
+    .section-intro .body-copy {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 560px) {
+    .wrap {
+      width: calc(100% - 40px);
+    }
+    .section {
+      padding-block: 60px;
+    }
+    .section-intro {
+      grid-template-columns: 1fr;
+      gap: 27px;
+      margin-block-end: 30px;
+    }
+    .actions {
+      gap: 18px;
+      margin-block-start: 26px;
+    }
+    .actions .button {
+      padding-inline: 18px;
+      font-size: 11px;
+    }
+    .actions .text-link {
+      font-size: 11px;
+    }
+  }
+}

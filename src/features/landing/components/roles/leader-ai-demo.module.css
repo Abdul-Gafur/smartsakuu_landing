@@ -1,0 +1,182 @@
+/* School leaders ask School AI; the answer writes itself out. */
+.root {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dfe5ee;
+  background: white;
+  overflow: hidden;
+}
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--navy);
+  color: white;
+}
+.head b {
+  display: block;
+  font-size: 13px;
+}
+.head small {
+  display: block;
+  font-size: 10px;
+  color: #bdcee6;
+}
+.mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: white;
+}
+.mark img {
+  width: 20px;
+  height: 20px;
+}
+.log {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 250px;
+  padding: 18px;
+  overflow-y: auto;
+  background: var(--paper);
+  overscroll-behavior: contain;
+}
+.empty {
+  margin: auto;
+  max-width: 30ch;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+.question {
+  align-self: flex-end;
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px 12px 3px 12px;
+  background: var(--navy);
+  color: white;
+  font-size: 12px;
+}
+.answer {
+  align-self: flex-start;
+  max-width: 92%;
+  padding: 12px 15px;
+  border-radius: 12px 12px 12px 3px;
+  background: white;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.answer p + p {
+  margin-block-start: 5px;
+}
+.source {
+  display: block;
+  margin-block-start: 9px;
+  color: #16756a;
+  font-size: 10px;
+  font-weight: 700;
+}
+.answer.typing p:last-child::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 12px;
+  margin-inline-start: 2px;
+  vertical-align: -1px;
+  background: var(--blue);
+  animation: caret 0.8s steps(1) infinite;
+}
+.thinking {
+  display: flex;
+  gap: 4px;
+  padding: 14px 16px;
+}
+.thinking span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9aa8bd;
+  animation: dot 1s ease-in-out infinite;
+}
+.thinking span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.thinking span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes dot {
+  50% {
+    transform: translateY(-4px);
+    opacity: 0.5;
+  }
+}
+.prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 18px 0;
+}
+.prompts button {
+  padding: 7px 11px;
+  border: 1px solid #d5ddea;
+  border-radius: 99px;
+  background: white;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 650;
+}
+.prompts button:hover:not(:disabled) {
+  border-color: var(--navy);
+}
+.form {
+  display: flex;
+  gap: 8px;
+  padding: 12px 18px 16px;
+}
+.form input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 14px;
+  border: 1px solid #d5ddea;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--ink);
+}
+.form input:focus-visible {
+  outline-width: 2px;
+  outline-offset: 0;
+}
+.form button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--navy);
+  color: white;
+}
+.form svg {
+  width: 18px;
+  height: 18px;
+}
+.root button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (max-height: 820px) and (min-width: 801px) {
+  .log {
+    height: 200px;
+  }
+}

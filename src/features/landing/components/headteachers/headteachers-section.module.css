@@ -1,0 +1,225 @@
+.section {
+  padding-block: 85px 95px;
+}
+.copy {
+  max-width: 760px;
+  text-align: center;
+  margin-inline: auto;
+}
+.title {
+  max-width: 22ch;
+  margin-inline: auto;
+}
+.intro {
+  margin-block-start: 22px;
+  font-size: 15px;
+}
+.actions {
+  text-align: center;
+  margin-block-start: 44px;
+}
+
+/* Carousel: the active video card opens up in the centre; neighbours blur. */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-block: 40px 26px;
+}
+.dots {
+  display: flex;
+  gap: 6px;
+}
+.dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 99px;
+  background: #cfd6e2;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+.dots button[aria-selected="true"] {
+  width: 34px;
+  background: var(--navy);
+}
+.viewport {
+  --active-w: 62%;
+  --side-w: 18%;
+  --gap: 12px;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.track {
+  display: flex;
+  gap: var(--gap);
+  transform: translateX(
+    calc(
+      (100% - var(--active-w)) / 2 - var(--i, 0) * (var(--side-w) + var(--gap))
+    )
+  );
+  transition: transform 0.6s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+.card {
+  flex: 0 0 var(--side-w);
+  min-width: 0;
+  margin: 0;
+  transition: flex-basis 0.6s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+.card.active {
+  flex-basis: var(--active-w);
+}
+.media {
+  position: relative;
+  height: 540px;
+  border-radius: 9px;
+  overflow: hidden;
+  background: var(--ink);
+  color: white;
+  cursor: pointer;
+}
+.card.active .media {
+  cursor: default;
+}
+.media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(14px);
+  transform: scale(1.12);
+  transition:
+    filter 0.55s ease,
+    transform 0.55s ease;
+}
+.card.active .media video {
+  filter: none;
+  transform: none;
+}
+.media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(6 20 48 / 0.82),
+    rgb(6 20 48 / 0) 48%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.55s ease;
+}
+.play,
+.media blockquote {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s;
+}
+.card.active .media::after,
+.card.active .play,
+.card.active .media blockquote {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.25s;
+}
+.card.playing .media::after,
+.card.playing .play,
+.card.playing .media blockquote {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s;
+}
+.play {
+  inset-block-start: 22px;
+  inset-inline-start: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px 11px 18px;
+  border: 1px solid rgb(255 255 255 / 0.6);
+  border-radius: 99px;
+  background: rgb(17 36 72 / 0.55);
+  backdrop-filter: blur(6px);
+  color: white;
+  font-size: 13px;
+  font-weight: 650;
+}
+.play:hover {
+  background: rgb(17 36 72 / 0.6);
+}
+.play::before {
+  content: "";
+  border-block: 7px solid transparent;
+  border-inline-start: 11px solid currentColor;
+}
+.media blockquote {
+  inset-inline: 24px;
+  inset-block-end: 24px;
+  max-width: 64ch;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  pointer-events: none;
+}
+.card figcaption {
+  padding: 22px 22px 0;
+  opacity: 0.55;
+  transition: opacity 0.4s ease;
+}
+.card.active figcaption {
+  opacity: 1;
+}
+.card figcaption b {
+  display: block;
+  font-size: 15px;
+  color: var(--ink);
+}
+.card figcaption span {
+  display: block;
+  margin-block-start: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding-block: 72px;
+  }
+  .viewport {
+    --active-w: 84%;
+    --side-w: 84%;
+  }
+  .media {
+    height: 460px;
+  }
+  .card figcaption {
+    padding-inline: 4px;
+  }
+}
+@media (max-width: 560px) {
+  .section {
+    padding-block: 60px;
+  }
+  .title {
+    font-size: 32px;
+  }
+  .media {
+    height: 440px;
+  }
+  .controls {
+    gap: 10px;
+  }
+  .media blockquote {
+    inset-inline: 18px;
+    inset-block-end: 18px;
+    font-size: 13px;
+  }
+}

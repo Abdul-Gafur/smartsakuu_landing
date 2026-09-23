@@ -1,39 +1,45 @@
 # SmartSakuu frontend
 
-Frontend foundation for SmartSakuu, built with Next.js, React, TypeScript,
-Tailwind CSS, and `next-intl`, with a standalone landing page in `index.html`.
+The SmartSakuu marketing site, built with Next.js (App Router), React,
+TypeScript, CSS Modules, Tailwind CSS, and `next-intl`.
 
 ## Landing page
 
-Edit the root `index.html` for the landing page's structure, styles, and
-interactions. It can be opened directly as a file, or served at
-`http://localhost:3000/index.html` after `pnpm dev`. Development and build
-commands generate `public/index.html` automatically with the asset paths
-adjusted for Next.js. Run `pnpm landing:sync` after editing during an existing
-development session, then refresh the browser. Do not edit the generated copy.
+The landing page is served at `/[locale]` (for example `/en`). It is composed
+in `src/features/landing/components/landing-page.tsx` from one component per
+section: hero, school overview, problem, why it matters, how it works, AI by
+role, school stories, institutional memory, responsible AI, Ghana, headteacher
+stories and contact.
 
-This English landing-page artifact is separate from the locale routes below;
-it does not redirect or replace the multilingual App Router foundation.
-Local images and their credits are in `public/assets/smartsakuu/`.
+- **Server components by default.** Sections render on the server and read
+  their copy with `next-intl`. Only interactive parts are client components:
+  the mobile menu, the score/record comparison, the role tabs (which pin and
+  step through on scroll on tall wide screens), the School AI demo, the story
+  slider, the headteacher carousel, the scroll-aligned principle cards and the
+  demo-request dialog.
+- **Copy** lives in `src/messages/en.json` under the `Landing` namespace.
+  Identifiers, asset paths, video sources and credit links live in
+  `src/features/landing/constants.ts`.
+- **Styles.** `src/styles/globals.css` holds the design tokens, element
+  defaults and a few shared primitives (`wrap`, `section`, `button`, …) in
+  cascade layers. Each component has a co-located CSS Module, which always
+  takes precedence over the layered global rules.
+- **Assets.** Local images and their credits are in `public/assets/smartsakuu/`
+  and are served through `next/image`. Plus Jakarta Sans is self-hosted with
+  `next/font`.
 
-The page includes keyboard-operable role/story tabs, an interactive comparison
-of a score and connected record, a mobile menu, and a demo-request dialog that
-prepares an email. No submission backend is connected. Stories are explicitly
-illustrative; approved headteacher interviews, names and quotes must be
-supplied before publishing real testimonials.
+The demo-request dialog prepares an email to `hello@smartsakuu.com`; no
+submission backend is connected. The School AI demo answers from sample data
+in the browser. Stories are explicitly illustrative; approved headteacher
+interviews, names and quotes must be supplied before publishing real
+testimonials.
 
-The three school-story players stream illustrative footage from Pexels and
-require a network connection. Their source links and credits appear below the
-stories on the page. Replace these clips with approved SmartSakuu interviews
-before describing them as real school testimonials. The Responsible AI card
-motion is implemented in CSS and JavaScript; the supplied short video was used
-only as a visual reference and is not shipped with the site. Motion respects
-the user's reduced-motion setting.
-
-The supplied references inform the section order: hero, school overview,
-problem, learning context, how it works, AI by role, school stories,
-institutional memory, responsible AI, Ghana, headteacher stories, and contact.
-The production build uses webpack, as configured in the original foundation.
+The school-story and headteacher videos stream illustrative footage from Pexels
+and require a network connection. Their source links and credits appear below
+the stories on the page. Replace these clips with approved SmartSakuu
+interviews before describing them as real school testimonials. All motion
+respects the user's reduced-motion setting. The production build uses webpack,
+as configured in the original foundation.
 
 ## Prerequisites
 
@@ -94,9 +100,10 @@ src/
 │   └── [locale]/       # Locale-aware App Router root layout and routes
 ├── components/
 │   ├── shared/         # Shared application components
-│   └── ui/             # Reusable UI primitives
+│   └── ui/             # Reusable UI primitives (e.g. Icon)
 ├── constants/          # Shared constants
-├── features/           # Feature-owned modules (when features are introduced)
+├── features/
+│   └── landing/        # Landing page sections, constants and helpers
 ├── hooks/              # Reusable React hooks
 ├── i18n/
 │   ├── navigation.ts   # Locale-aware Link/router wrappers
@@ -158,8 +165,10 @@ the current pathname and a target `locale`; no final switcher UI is included.
 - Use descriptive keys such as `Checkout.emptyStateTitle`, not rendered text as
   keys.
 - Keep content out of components; use `next-intl` on the server by default.
-- Add only copy needed by implemented functionality. The current strings are
-  intentionally minimal verification content.
+- Add only copy needed by implemented functionality.
+- Keys missing from a locale fall back to English (see `src/i18n/request.ts`).
+  The `fr`, `ar` and `pt` catalogs are currently empty, so those routes render
+  the English landing copy until translations are added.
 
 ### RTL considerations
 

@@ -1,0 +1,178 @@
+.section {
+  background: var(--paper);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+.intro {
+  margin-block-start: 24px;
+  font-size: 15px;
+}
+.impact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-block-start: 31px;
+}
+.impact strong {
+  color: var(--navy);
+  font-size: 43px;
+  font-weight: 750;
+  letter-spacing: -0.06em;
+  line-height: 1.4;
+}
+.impact p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-block-start: 7px;
+}
+.source {
+  display: inline-block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-block-start: 24px;
+}
+.caption {
+  font-size: 14px;
+  font-weight: 650;
+  margin-block-start: 17px;
+  max-width: 40ch;
+}
+
+/* The classroom photo sits behind the learning journey, fading into navy. */
+.visual {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  border-radius: 9px 9px 72px 9px;
+  background: var(--navy);
+}
+.visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 42% center;
+}
+.visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(9 31 72 / 45%),
+    rgb(9 31 72 / 87%) 32%,
+    rgb(9 31 72 / 95%)
+  );
+}
+.steps {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 19px;
+  width: min(72%, 430px);
+  margin-block: 1em;
+  margin-inline: auto 13%;
+  padding: 38px 0 40px;
+  list-style: none;
+  color: white;
+}
+.steps li {
+  position: relative;
+  padding-inline-start: 25px;
+  border-inline-start: 1px solid rgb(255 255 255 / 43%);
+}
+.steps li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -5px;
+  inset-block-start: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+.steps span {
+  display: block;
+  margin-block-end: 5px;
+  color: #8ee5d9;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.steps strong {
+  display: block;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.steps p {
+  margin-block-start: 5px;
+  color: #dce8f5;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1050px) {
+  .grid {
+    gap: 48px;
+  }
+}
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .photo {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    gap: 28px;
+    align-items: end;
+  }
+  .caption {
+    font-size: 18px;
+    margin-block-end: 18px;
+  }
+  .visual {
+    min-height: 580px;
+  }
+}
+@media (max-width: 560px) {
+  .grid {
+    gap: 30px;
+  }
+  .impact {
+    gap: 22px;
+  }
+  .impact strong {
+    font-size: 38px;
+  }
+  .photo {
+    display: block;
+  }
+  .caption {
+    font-size: 14px;
+  }
+  .visual {
+    min-height: 600px;
+  }
+  .visual::after {
+    background: rgb(9 31 72 / 85%);
+  }
+  .steps {
+    width: 100%;
+    margin-inline: 0;
+    padding: 25px 22px 31px 36px;
+    gap: 13px;
+  }
+  .steps strong {
+    font-size: 14px;
+  }
+  .steps p {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,266 @@
+.section {
+  background: #0e2c63;
+  color: white;
+  overflow: hidden;
+}
+.heading {
+  text-align: center;
+  max-width: 740px;
+  margin-inline: auto;
+  margin-block-end: 52px;
+}
+.label {
+  color: #8ee5d9;
+}
+.intro {
+  margin-block-start: 22px;
+  color: #cfdded;
+}
+
+/* Inputs flow into the connected record, which serves each role. */
+.map {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.18fr 1fr;
+  gap: 8%;
+  align-items: center;
+}
+.lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.lines path {
+  fill: none;
+  stroke: #4acac1;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 8;
+  opacity: 0.8;
+  animation: flow 12s linear infinite;
+}
+.lines path:nth-child(even) {
+  animation-direction: reverse;
+}
+@keyframes flow {
+  to {
+    stroke-dashoffset: -240;
+  }
+}
+.column,
+.core {
+  position: relative;
+  z-index: 1;
+}
+.columnTitle {
+  color: #8ee5d9;
+  font-size: 13px;
+  margin-block-end: 13px;
+}
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+.list li {
+  min-height: 78px;
+  padding-block: 15px;
+  border-block-end: 1px solid rgb(255 255 255 / 19%);
+}
+.list li:last-child {
+  border-block-end: 0;
+}
+.list b {
+  display: block;
+  color: white;
+  font-size: 14px;
+}
+.list span {
+  display: block;
+  color: #bdcee6;
+  font-size: 11px;
+  margin-block-start: 4px;
+}
+.core {
+  border-radius: 15px;
+  background: white;
+  color: var(--ink);
+  padding: 27px;
+}
+.core header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-block-end: 17px;
+}
+.core header svg {
+  width: 38px;
+  height: 38px;
+  color: var(--blue);
+  background: #e5edfd;
+  padding: 8px;
+  border-radius: 8px;
+}
+.core strong {
+  display: block;
+  font-size: 15px;
+}
+.core small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.core dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+.core dl div {
+  min-height: 78px;
+  padding: 13px;
+  background: #f3f6fd;
+  border-radius: 8px;
+  font-size: 11px;
+}
+.core dt {
+  color: var(--muted);
+  font-size: 10px;
+}
+.core dd {
+  margin: 0;
+  margin-block-start: 8px;
+  font-weight: 700;
+  font-size: 13px;
+}
+.core > p {
+  font-size: 9px;
+  color: var(--muted);
+  margin-block-start: 16px;
+}
+
+/* A school day as a timeline. */
+.day {
+  margin-block-start: 77px;
+  padding-block-start: 36px;
+  border-block-start: 1px solid rgb(255 255 255 / 20%);
+}
+.day h3 {
+  max-width: 19ch;
+  margin-block-end: 31px;
+  color: white;
+  font-size: 21px;
+}
+.day ol {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.day ol::before {
+  content: "";
+  position: absolute;
+  inset-inline: 5px;
+  inset-block-start: 5px;
+  border-block-start: 2px solid var(--teal);
+}
+.day li {
+  position: relative;
+  padding-block-start: 30px;
+}
+.day li::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 10px;
+  height: 10px;
+  border: 3px solid var(--teal);
+  border-radius: 50%;
+  background: #0e2c63;
+}
+.day time {
+  color: #8ee5d9;
+  font-size: 11px;
+}
+.day b {
+  display: block;
+  color: white;
+  font-size: 15px;
+  margin-block: 4px;
+}
+.day p {
+  font-size: 11px;
+  color: #bdcee6;
+}
+
+@media (max-width: 800px) {
+  .map {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .lines {
+    display: none;
+  }
+  .columnTitle {
+    margin-block-end: 8px;
+  }
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 16px;
+  }
+  .list li {
+    min-height: 68px;
+  }
+  .core header {
+    flex-direction: column;
+    align-items: start;
+  }
+  .day ol {
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    overflow-x: auto;
+    padding-block-end: 12px;
+  }
+  .day ol::before {
+    display: none;
+  }
+}
+@media (max-width: 560px) {
+  .heading {
+    text-align: start;
+    margin-block-end: 32px;
+  }
+  .intro {
+    font-size: 14px;
+  }
+  .list {
+    grid-template-columns: 1fr;
+  }
+  .list li {
+    min-height: auto;
+    padding-block: 12px;
+  }
+  .core {
+    padding: 20px;
+  }
+  .core header {
+    flex-direction: row;
+    align-items: center;
+  }
+  .day li {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 12px;
+  }
+  .day b {
+    margin: 0;
+  }
+  .day p {
+    grid-column: 2;
+  }
+}

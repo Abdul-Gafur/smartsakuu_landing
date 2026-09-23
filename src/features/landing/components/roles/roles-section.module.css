@@ -1,0 +1,201 @@
+.section {
+  padding-block-start: 40px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 40px;
+}
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.tabs button {
+  text-align: start;
+  border: 0;
+  border-radius: 5px;
+  padding: 16px 19px;
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+.tabs button[aria-selected="true"] {
+  background: var(--navy);
+  color: white;
+}
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 0.98fr;
+  gap: 46px;
+  min-height: 460px;
+}
+.panelTitle {
+  font-size: 30px;
+  max-width: 20ch;
+}
+.panelBody {
+  font-size: 14px;
+  margin-block-start: 20px;
+}
+.benefits {
+  list-style: none;
+  margin: 25px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.benefits li {
+  background: var(--paper);
+  border-radius: 5px;
+  padding: 17px 19px;
+}
+.benefits b {
+  display: block;
+  font-size: 12px;
+}
+.benefits span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-block-start: 4px;
+}
+.image {
+  position: relative;
+  padding-block-end: 34px;
+}
+.image > img {
+  height: 455px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 75px 8px 8px 8px;
+}
+.image figcaption {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: -22px;
+  width: 92%;
+  background: var(--mint);
+  padding: 18px 22px;
+  font-size: 11px;
+  border-radius: 6px;
+}
+.image figcaption b {
+  display: block;
+  color: #155f57;
+  margin-block-end: 4px;
+}
+.image.product img {
+  object-fit: contain;
+  height: auto;
+  border-radius: 6px;
+  background: var(--paper);
+  padding: 8px;
+}
+.image.product {
+  align-self: center;
+}
+.image.product figcaption {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  margin-block-start: 15px;
+}
+
+/* The section holds still while scrolling steps through its tabs. */
+.section.pinned {
+  padding-block: 0;
+  height: calc(100vh - 92px + 150vh);
+}
+.section.pinned .stage {
+  position: sticky;
+  top: 92px;
+  min-height: calc(100vh - 92px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 24px;
+}
+.section.pinned .panel:not([hidden]) {
+  animation: role-in 0.45s ease both;
+}
+@keyframes role-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+@media (max-height: 820px) and (min-width: 801px) {
+  .section .intro {
+    margin-block-end: 28px;
+  }
+  .section .panel {
+    min-height: 0;
+  }
+  .section .image > img {
+    height: 360px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .panel {
+    gap: 28px;
+  }
+  .layout {
+    grid-template-columns: 130px 1fr;
+    gap: 24px;
+  }
+  .tabs button {
+    padding-inline: 14px;
+  }
+  .panelTitle {
+    font-size: 26px;
+  }
+}
+@media (max-width: 800px) {
+  .section {
+    padding-block-start: 72px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .tabs {
+    flex-direction: row;
+  }
+  .tabs button {
+    flex: 1;
+    text-align: center;
+  }
+  .panel {
+    gap: 40px;
+  }
+}
+@media (max-width: 560px) {
+  .section {
+    padding-block-start: 60px;
+  }
+  .tabs {
+    gap: 5px;
+  }
+  .tabs button {
+    font-size: 11px;
+    padding: 12px;
+  }
+  .panel {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+  .panelTitle {
+    font-size: 28px;
+    max-width: none;
+  }
+  .image > img {
+    height: 340px;
+    border-start-start-radius: 60px;
+  }
+  .image figcaption {
+    inset-inline-start: 14px;
+    width: calc(100% - 28px);
+  }
+}

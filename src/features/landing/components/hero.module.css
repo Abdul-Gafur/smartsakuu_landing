@@ -1,0 +1,245 @@
+.hero {
+  padding-block: 66px 88px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.03fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+.title {
+  max-width: 12ch;
+}
+.intro {
+  max-width: 47ch;
+  margin-block-start: 26px;
+  font-size: 16px;
+}
+.footnote {
+  margin-block-start: 29px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.collage {
+  position: relative;
+  min-height: 487px;
+}
+.photo {
+  position: absolute;
+  object-fit: cover;
+}
+.photo.students {
+  inset-block-start: 15px;
+  inset-inline-start: 0;
+  width: 61%;
+  height: 292px;
+  border-start-start-radius: 80px;
+  object-position: 37% center;
+}
+.photo.teacher {
+  inset-block-start: 183px;
+  inset-inline-end: 0;
+  width: 49%;
+  height: 292px;
+  border-end-end-radius: 65px;
+  object-position: 48% center;
+  border: 8px solid white;
+  border-inline-end: 0;
+}
+.schoolNote {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  width: 193px;
+  padding: 24px;
+  background: var(--navy);
+  color: white;
+  border-radius: 4px;
+}
+.schoolNote small {
+  display: block;
+  color: #b5d0ff;
+  font-size: 10px;
+  margin-block-end: 10px;
+}
+.schoolNote strong {
+  font-size: 20px;
+  line-height: 1.25;
+  display: block;
+  letter-spacing: -0.03em;
+}
+.schoolNote .noteBottom {
+  margin-block-start: 12px;
+  font-size: 9px;
+  color: #ccdcf7;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.noteBottom i {
+  width: 6px;
+  height: 6px;
+  background: var(--teal);
+  border-radius: 50%;
+}
+.learningNote {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 326px;
+  width: 48%;
+  padding: 21px 22px;
+  background: var(--mint);
+  border-radius: 4px 4px 40px 4px;
+}
+.learningNote strong {
+  font-size: 13px;
+  display: block;
+  line-height: 1.5;
+}
+.learningNote p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #375952;
+  margin-block-start: 7px;
+}
+/* Inline, as in the original line layout (preflight makes SVGs blocks). */
+.learningNote svg {
+  display: inline;
+  vertical-align: baseline;
+  width: 26px;
+  height: 26px;
+  color: #137b70;
+  margin-block-end: 8px;
+}
+.caption {
+  position: absolute;
+  inset-block-end: -13px;
+  inset-inline-end: 9px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+@media (min-width: 1450px) {
+  .hero {
+    padding-block: 85px 105px;
+  }
+  .grid {
+    gap: 85px;
+  }
+}
+@media (max-width: 1050px) {
+  .grid {
+    gap: 36px;
+  }
+  .collage {
+    min-height: 440px;
+  }
+  .photo.students {
+    height: 265px;
+  }
+  .photo.teacher {
+    inset-block-start: 176px;
+    height: 248px;
+  }
+  .schoolNote {
+    width: 163px;
+    padding: 19px;
+  }
+  .schoolNote strong {
+    font-size: 20px;
+  }
+  .learningNote {
+    inset-block-start: 299px;
+    padding: 15px;
+  }
+}
+@media (max-width: 800px) {
+  .hero {
+    padding-block: 45px 65px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .title {
+    font-size: 54px;
+    max-width: 15ch;
+  }
+  .intro {
+    max-width: 58ch;
+  }
+  .collage {
+    width: min(510px, 100%);
+    justify-self: center;
+    min-height: 480px;
+  }
+  .photo.students {
+    height: 290px;
+  }
+  .photo.teacher {
+    height: 290px;
+  }
+  .schoolNote {
+    width: 185px;
+    padding: 22px;
+  }
+  .learningNote {
+    inset-block-start: 325px;
+    padding: 20px;
+  }
+}
+@media (max-width: 560px) {
+  .title {
+    font-size: clamp(38px, 10.9vw, 56px);
+  }
+  .intro {
+    font-size: 14px;
+    margin-block-start: 22px;
+  }
+  .footnote {
+    font-size: 10px;
+    margin-block-start: 21px;
+  }
+  .collage {
+    min-height: 390px;
+  }
+  .photo.students {
+    height: 236px;
+    border-start-start-radius: 55px;
+  }
+  .photo.teacher {
+    inset-block-start: 149px;
+    height: 228px;
+    border-end-end-radius: 45px;
+  }
+  .schoolNote {
+    width: 43%;
+    padding: 17px;
+  }
+  .schoolNote strong {
+    font-size: 19px;
+  }
+  .schoolNote small {
+    font-size: 9px;
+    margin-block-end: 6px;
+  }
+  .schoolNote .noteBottom {
+    display: none;
+  }
+  .learningNote {
+    inset-block-start: 266px;
+    padding: 15px;
+  }
+  .learningNote svg {
+    display: none;
+  }
+  .learningNote strong {
+    font-size: 12px;
+  }
+  .learningNote p {
+    font-size: 10px;
+  }
+  .caption {
+    font-size: 9px;
+  }
+}

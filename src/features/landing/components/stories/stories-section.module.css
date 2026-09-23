@@ -1,0 +1,161 @@
+.section {
+  background: var(--paper);
+}
+.heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-block-end: 36px;
+}
+.title {
+  max-width: 20ch;
+}
+.tabs {
+  display: flex;
+  gap: 7px;
+  padding: 5px;
+  background: white;
+  border-radius: 6px;
+}
+.tabs button {
+  background: transparent;
+  color: var(--muted);
+  border: 0;
+  border-radius: 4px;
+  padding: 11px 18px;
+  font-size: 12px;
+  font-weight: 650;
+}
+.tabs button[aria-selected="true"] {
+  background: var(--navy);
+  color: white;
+}
+.panel {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  min-height: 375px;
+}
+.track {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+.track > .panel {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-block-start: 24px;
+}
+.progress {
+  flex: 1;
+  height: 3px;
+  border-radius: 3px;
+  background: #d8dfea;
+  overflow: hidden;
+}
+/* The bar fills as each slide scrolls into view. */
+.progress span {
+  display: block;
+  width: calc(var(--story-fill, 0.3333) * 100%);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--navy);
+}
+.arrows {
+  display: flex;
+  gap: 8px;
+}
+.photo {
+  position: relative;
+  min-height: 375px;
+  overflow: hidden;
+  border-radius: 7px 0 0 7px;
+}
+.photo video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #0e2c63;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 40px 48px;
+  background: white;
+  border-radius: 0 7px 7px 0;
+}
+.copy > small {
+  font-size: 11px;
+  color: #16756a;
+  font-weight: 700;
+  margin-block-end: 19px;
+}
+.copy h3 {
+  font-size: 30px;
+}
+.copy p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-block-start: 20px;
+}
+.cta {
+  margin-block-start: 20px;
+}
+
+@media (max-width: 1050px) {
+  .copy {
+    padding: 32px;
+  }
+}
+@media (max-width: 800px) {
+  .heading {
+    display: block;
+  }
+  .tabs {
+    width: fit-content;
+    margin-block-start: 25px;
+  }
+  .panel {
+    grid-template-columns: 1fr 1fr;
+  }
+  .copy {
+    padding: 28px;
+  }
+  .copy h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 560px) {
+  .panel {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .photo {
+    height: 285px;
+    min-height: 0;
+    border-radius: 7px 7px 0 0;
+  }
+  .copy {
+    border-radius: 0 0 7px 7px;
+    padding: 30px 26px;
+  }
+  .copy h3 {
+    font-size: 27px;
+  }
+}

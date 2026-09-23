@@ -1,12 +1,1 @@
-{
-  "Metadata": {
-    "siteName": "SmartSakuu",
-    "title": "SmartSakuu",
-    "description": "Base multilingue de l’application SmartSakuu."
-  },
-  "HomePage": {
-    "status": "Configuration terminée",
-    "title": "Base de SmartSakuu",
-    "description": "Cet espace réservé vérifie la configuration du routage localisé et des traductions."
-  }
-}
+{}

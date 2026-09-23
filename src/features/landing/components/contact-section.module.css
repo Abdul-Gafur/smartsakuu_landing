@@ -1,0 +1,93 @@
+.section {
+  padding-block: 0 65px;
+}
+.banner {
+  position: relative;
+  isolation: isolate;
+  background: var(--navy);
+  color: white;
+  border-radius: 9px 70px 9px 9px;
+  overflow: hidden;
+}
+/* The classroom photo sits behind the whole banner, fading into navy. */
+.photo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(2 44 126 / 96%) 0%,
+    rgb(2 44 126 / 86%) 42%,
+    rgb(2 44 126 / 22%) 100%
+  );
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 37% center;
+}
+.copy {
+  position: relative;
+  max-width: 680px;
+  padding: 64px 48px;
+}
+.label {
+  color: #89e5db;
+}
+.title {
+  font-size: clamp(30px, 3.1vw, 42px);
+  max-width: 21ch;
+}
+.body {
+  color: #cad9f2;
+  font-size: 13px;
+  margin-block-start: 24px;
+}
+.actions {
+  gap: 12px;
+  margin-block-start: 26px;
+}
+.cta {
+  font-size: 11px;
+  padding-inline: 18px;
+}
+
+@media (max-width: 1050px) {
+  .copy {
+    padding: 40px 34px;
+  }
+}
+@media (max-width: 800px) {
+  .photo::after {
+    background: rgb(2 44 126 / 85%);
+  }
+  .copy {
+    padding: 36px 28px;
+  }
+}
+@media (max-width: 560px) {
+  .section {
+    padding-block-end: 35px;
+  }
+  .banner {
+    border-start-end-radius: 50px;
+  }
+  .copy {
+    padding: 38px 26px;
+  }
+  .title {
+    font-size: 32px;
+  }
+  .actions {
+    gap: 11px;
+  }
+  .cta {
+    width: 100%;
+  }
+}
