@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
-import { evidenceRows, problemGaps } from "../../constants";
+import { evidenceRows, images, problemGaps } from "../../constants";
 import { lineBreaks } from "../../lib/rich-text";
 import { EvidencePanel } from "./evidence-panel";
 import styles from "./problem-section.module.css";
@@ -28,6 +29,12 @@ export function ProblemSection() {
         </div>
         <div className={styles.grid}>
           <div className={styles.scoreCard}>
+            <Image
+              {...images.classroom}
+              alt=""
+              className={styles.scorePhoto}
+              sizes="(max-width: 560px) 100vw, 480px"
+            />
             <small className={styles.sampleLabel}>
               {t("score.sampleLabel")}
             </small>

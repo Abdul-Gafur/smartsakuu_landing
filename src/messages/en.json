@@ -24,8 +24,8 @@
     },
     "Hero": {
       "title": "Run the school.<br></br>Understand every learner.<br></br>Improve learning.",
-      "body": "SmartSakuu helps schools digitize how they operate, build a continuous educational record for every learner, and use that information to identify learning gaps, support better teaching and guide more targeted learning.",
-      "detail": "From admissions, attendance and fees to assessments, lessons, revision and exam preparation the same school record becomes more useful to everyone around the learner.",
+      "body": "SmartSakuu gives low-digital-maturity schools infrastructure to create reliable learner records, then uses AI to help teachers identify learning gaps, prepare lessons informed by actual class performance, guide targeted student learning, and measure whether support worked.",
+      "detail": "The platform connects the learner’s school journey in one record so schools can spot learning gaps earlier, intervene with the right support, and track whether that support is working.",
       "howItWorks": "See how it works",
       "footnote": "Built for school leaders, teachers, students and parents. Starting in Ghana.",
       "studentsImageAlt": "Schoolchildren working together on their lessons",
@@ -95,7 +95,7 @@
           }
         },
         "result": "The pattern is visible: a persistent algebra gap that last term’s support has not closed.",
-        "resultEmpty": "Schools often know what happened. The harder question is why it keeps happening — and what should happen next."
+        "resultEmpty": "Schools often know what happened. The harder question is why it keeps happening and what should happen next."
       },
       "closing": {
         "title": "A learner should not have to struggle repeatedly before someone sees the pattern.",
@@ -121,7 +121,7 @@
       "imageAlt": "Students concentrating on their schoolwork together",
       "statement": {
         "lead": "The challenge is not simply collecting more data.",
-        "emphasis": "It is making the information schools already generate useful early enough to support the learner."
+        "emphasis": "It is making the information schools already generate useful early enough to intervene and support the learner."
       }
     },
     "Digitize": {
@@ -253,7 +253,7 @@
         "leaders": {
           "title": "School leaders",
           "body": "See academic and operational information without rebuilding the picture from paper files, spreadsheets and separate reports.",
-          "quoteLabel": "Ask:",
+          "quoteLabel": "Ask the School AI:",
           "quote": "“Which learners need academic support this term, and which learning gaps appear most often?”",
           "link": "See School AI"
         },

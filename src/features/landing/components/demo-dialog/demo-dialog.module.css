@@ -61,6 +61,15 @@
   border-radius: 4px;
   color: var(--ink);
   font-size: 13px;
+  transition: border-color 0.15s;
+}
+/* A light focus state in place of the heavy global outline. */
+.field input:focus,
+.field input:focus-visible,
+.field select:focus,
+.field select:focus-visible {
+  outline: none;
+  border-color: var(--blue);
 }
 .note {
   font-size: 11px;
