@@ -52,7 +52,6 @@ export function HeadteachersSection() {
             }),
           }))}
         />
-
       </div>
     </section>
   );

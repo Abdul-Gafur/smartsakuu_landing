@@ -1,0 +1,97 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 20px;
+}
+
+/* School processes that form the digital foundation. */
+.foundation {
+  padding: 38px 40px;
+  background: var(--navy);
+  color: white;
+  border-radius: 10px 0px 0px 72px;
+}
+.lead {
+  color: #cbdaf0;
+  font-size: 15px;
+}
+.lead strong {
+  display: block;
+  margin-block-start: 6px;
+  color: white;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+}
+.processesLabel {
+  margin-block-start: 30px;
+  color: #8ee5d9;
+  font-size: 12px;
+  font-weight: 700;
+}
+.processes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 14px 0 0;
+  list-style: none;
+}
+.processes li {
+  padding: 6px 12px;
+  background: rgb(255 255 255 / 10%);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 650;
+}
+.record {
+  margin-block-start: 26px;
+  color: #cbdaf0;
+  font-size: 13px;
+  max-width: 48ch;
+}
+
+/* Where a school starts, and how the value grows. */
+.start {
+  padding: 38px 40px;
+  background: var(--paper);
+}
+.start h3 {
+  color: var(--navy);
+}
+.startBody {
+  margin-block-start: 14px;
+  font-size: 14px;
+}
+.steps {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 26px 0 0;
+  list-style: none;
+}
+.steps li {
+  padding: 16px 18px;
+  border-radius: 6px;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .foundation,
+  .start {
+    padding: 28px 22px;
+  }
+  .lead strong {
+    font-size: 20px;
+  }
+  .steps li {
+    font-size: 13px;
+  }
+}

@@ -34,7 +34,7 @@ type RolesShowcaseProps = {
 };
 
 /**
- * Role tabs for the "AI that knows the school" section. On wide screens where
+ * Role tabs for the "AI in context" section. On wide screens where
  * every panel fits, the section pins in place and scrolling steps through the
  * tabs; the page continues once the last tab has had its turn.
  */
@@ -176,7 +176,7 @@ export function RolesShowcase({
     syncToScroll();
   }, [pinned, syncToScroll]);
 
-  // Let links elsewhere on the page (such as the school stories) open a tab.
+  // Let links elsewhere on the page (such as the role cards) open a tab.
   useEffect(() => {
     register((role) => {
       const index = tabs.findIndex((tab) => tab.id === role);

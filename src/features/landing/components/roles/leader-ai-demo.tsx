@@ -47,8 +47,14 @@ function topicFor(question: string): LeaderAiTopic {
   const q = question.toLowerCase();
   if (/fee|pay|owe|balance|money/.test(q)) return "fees";
   if (/attend|absen|register|missing/.test(q)) return "attendance";
-  if (/math|behind|score|result|exam|bece|class/.test(q)) return "maths";
   if (/attention|today|priorit|urgent|week/.test(q)) return "attention";
+  if (/trend|chang|improv|over time|last three|terms|years/.test(q))
+    return "trend";
+  if (/topic|gap|weak|most often|common/.test(q)) return "topics";
+  if (
+    /math|learner|student|struggl|behind|score|result|exam|bece|class/.test(q)
+  )
+    return "learners";
   return "other";
 }
 

@@ -39,25 +39,64 @@
   margin-block-start: 24px;
   font-size: 15px;
 }
-.facts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 44px;
+  margin: 30px 0 0;
 }
-.facts article {
-  background: white;
-  padding: 27px 25px;
-  border-radius: 8px;
-}
-.facts h3 {
-  font-size: 14px;
+.stats dt {
   color: var(--navy);
-  line-height: 1.4;
+  font-size: 43px;
+  font-weight: 750;
+  letter-spacing: -0.06em;
+  line-height: 1.2;
 }
-.facts p {
-  font-size: 12px;
+.stats dd {
+  margin: 0;
   color: var(--muted);
-  margin-block-start: 13px;
+  font-size: 12px;
+}
+.measure {
+  margin-block-start: 18px;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Ghana first, then localization. */
+.local {
+  padding: 34px 32px;
+  border: 1px solid #dfe5ee;
+}
+.local h3 {
+  color: var(--navy);
+  font-size: 21px;
+}
+.localLead {
+  margin-block-start: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 12px 0 0;
+  list-style: none;
+}
+.facts li {
+  padding: 7px 12px;
+  background: var(--mint);
+  color: #155f57;
+  font-size: 12px;
+  font-weight: 700;
+}
+.localBody {
+  margin-block-start: 20px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 @media (max-width: 1050px) {
@@ -82,17 +121,14 @@
   }
 }
 @media (max-width: 560px) {
-  .facts {
-    gap: 12px;
+  .stats dt {
+    font-size: 36px;
   }
-  .facts article {
-    padding: 22px 18px;
+  .local {
+    padding: 26px 20px;
   }
-  .facts h3 {
-    font-size: 13px;
-  }
-  .facts p {
-    font-size: 11px;
+  .local h3 {
+    font-size: 19px;
   }
   .portraits {
     grid-template-columns: repeat(3, 1fr);

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { evidenceRows } from "../../constants";
+import { evidenceRows, problemGaps } from "../../constants";
 import { lineBreaks } from "../../lib/rich-text";
 import { EvidencePanel } from "./evidence-panel";
 import styles from "./problem-section.module.css";
@@ -17,6 +17,14 @@ export function ProblemSection() {
             <h2 id="problem-title">{t("title")}</h2>
           </div>
           <p className="body-copy">{t("body")}</p>
+        </div>
+        <div className={styles.gaps}>
+          <p>{t("gaps.lead")}</p>
+          <ul>
+            {problemGaps.map((gap) => (
+              <li key={gap}>{t(`gaps.items.${gap}`)}</li>
+            ))}
+          </ul>
         </div>
         <div className={styles.grid}>
           <div className={styles.scoreCard}>
@@ -57,6 +65,13 @@ export function ProblemSection() {
               <span className={styles.empty}>{t("evidence.resultEmpty")}</span>
             </p>
           </EvidencePanel>
+        </div>
+        <div className={styles.closing}>
+          <h3>{t("closing.title")}</h3>
+          <div>
+            <p className="body-copy">{t("closing.body")}</p>
+            <p className={styles.statement}>{t("closing.statement")}</p>
+          </div>
         </div>
       </div>
     </section>

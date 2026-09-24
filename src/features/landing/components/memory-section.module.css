@@ -16,15 +16,21 @@
   margin-block-start: 25px;
   font-size: 15px;
 }
+.stepsLabel {
+  margin-block-start: 30px;
+  color: #89e5db;
+  font-size: 12px;
+  font-weight: 700;
+}
 .timeline {
   list-style: none;
-  margin: 34px 0 0;
+  margin: 16px 0 0;
   padding: 0;
 }
 .timeline li {
   position: relative;
   padding-inline-start: 29px;
-  padding-block-end: 25px;
+  padding-block-end: 18px;
   border-inline-start: 1px solid #354a6b;
 }
 .timeline li::before {

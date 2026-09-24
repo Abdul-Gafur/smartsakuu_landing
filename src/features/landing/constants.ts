@@ -35,36 +35,47 @@ export const ghanaPortraits = [
   images.classroom,
 ];
 
-export const navSections = ["problem", "record", "roles", "stories"] as const;
+export const navSections = ["problem", "record", "roles", "ghana"] as const;
 
-export const platformPillars = [
-  "operations",
-  "teaching",
-  "learning",
-  "community",
+export const problemGaps = [
+  "behind",
+  "topics",
+  "warning",
+  "support",
+  "helped",
+  "dropout",
 ] as const;
 
 export const evidenceRows = [
-  "history",
   "mastery",
-  "activity",
+  "history",
   "attendance",
+  "support",
+  "outcome",
 ] as const;
 
 export const impactStats = ["literacy", "schooling"] as const;
 
-export const journeySteps = [
-  "understand",
-  "identify",
-  "support",
-  "connect",
+export const schoolProcesses = [
+  "admissions",
+  "records",
+  "attendance",
+  "fees",
+  "hr",
+  "assessments",
+  "examinations",
+  "curriculum",
+  "teaching",
+  "reporting",
 ] as const;
 
+export const adoptionSteps = ["operations", "record", "ai"] as const;
+
 export const recordInputs = [
-  "operations",
-  "curriculum",
-  "assessments",
-  "learning",
+  "taught",
+  "performed",
+  "support",
+  "school",
 ] as const;
 
 export const recordFields = [
@@ -77,32 +88,41 @@ export const recordFields = [
 ] as const;
 
 export const recordOutputs = [
-  "students",
-  "teachers",
-  "parents",
-  "leaders",
+  "persists",
+  "changed",
+  "next",
+  "operations",
 ] as const;
 
-export const schoolDaySteps = [
-  "arrive",
-  "teach",
-  "assess",
-  "learn",
+export const learningLoop = [
+  "identify",
   "support",
+  "reassess",
+  "changed",
+  "next",
 ] as const;
 
-export const roleIds = ["students", "teachers", "leaders"] as const;
+export const valueRoles = [
+  "leaders",
+  "teachers",
+  "students",
+  "parents",
+] as const;
+
+export const roleIds = ["teachers", "students", "leaders"] as const;
 export type RoleId = (typeof roleIds)[number];
 
 export const roleBenefits = {
-  students: ["pathway", "tutor", "exams"],
-  teachers: ["time", "levels", "control"],
-  leaders: ["attention", "operations", "knowledge"],
+  teachers: ["generic", "contextual", "control"],
+  students: ["focus", "tutor", "incentives"],
+  leaders: ["sources", "access"],
 } as const satisfies Record<RoleId, readonly string[]>;
 
 export const leaderAiTopics = [
+  "learners",
+  "topics",
+  "trend",
   "attention",
-  "maths",
   "fees",
   "attendance",
   "other",
@@ -110,7 +130,7 @@ export const leaderAiTopics = [
 export type LeaderAiTopic = (typeof leaderAiTopics)[number];
 
 /** Suggested questions, in display order. The first one plays automatically. */
-export const leaderAiPrompts = ["attention", "maths", "fees"] as const;
+export const leaderAiPrompts = ["learners", "topics", "trend"] as const;
 
 export const storyIds = ["students", "teachers", "parents"] as const;
 export type StoryId = (typeof storyIds)[number];
@@ -142,17 +162,39 @@ export const schoolStories = {
   { poster: string; video: string; creditUrl: string }
 >;
 
-export const memorySteps = ["baseline", "tried", "build"] as const;
+export const examResources = [
+  "pastQuestions",
+  "timed",
+  "mocks",
+  "revision",
+  "tutoring",
+  "topics",
+] as const;
+
+export const memorySteps = [
+  "happened",
+  "tried",
+  "changed",
+  "attention",
+] as const;
 export const memoryTags = ["assessments", "classes", "interventions"] as const;
 
 export const reviewSteps = ["drafts", "reviews", "approves"] as const;
-export const principles = ["control", "access", "support", "context"] as const;
+export const principles = [
+  "control",
+  "access",
+  "oversight",
+  "context",
+] as const;
+
+export const proofStats = ["schools", "learners", "teachers"] as const;
 
 export const ghanaFacts = [
-  "platform",
-  "settings",
-  "gnaps",
   "curriculum",
+  "exams",
+  "workflows",
+  "payments",
+  "languages",
 ] as const;
 
 export const headteacherStoryIds = [

@@ -16,6 +16,13 @@
   margin-block-start: 22px;
   color: #cfdded;
 }
+.statement {
+  margin-block-start: 18px;
+  color: white;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.5;
+}
 
 /* Inputs flow into the connected record, which serves each role. */
 .map {
@@ -85,7 +92,6 @@
   margin-block-start: 4px;
 }
 .core {
-  border-radius: 15px;
   background: white;
   color: var(--ink);
   padding: 27px;
@@ -122,7 +128,6 @@
   min-height: 78px;
   padding: 13px;
   background: #f3f6fd;
-  border-radius: 8px;
   font-size: 11px;
 }
 .core dt {
@@ -141,19 +146,19 @@
   margin-block-start: 16px;
 }
 
-/* A school day as a timeline. */
-.day {
+/* The learning loop as a timeline. */
+.loop {
   margin-block-start: 77px;
   padding-block-start: 36px;
   border-block-start: 1px solid rgb(255 255 255 / 20%);
 }
-.day h3 {
-  max-width: 19ch;
+.loop h3 {
+  max-width: none;
   margin-block-end: 31px;
   color: white;
   font-size: 21px;
 }
-.day ol {
+.loop ol {
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -162,18 +167,18 @@
   margin: 0;
   list-style: none;
 }
-.day ol::before {
+.loop ol::before {
   content: "";
   position: absolute;
   inset-inline: 5px;
   inset-block-start: 5px;
   border-block-start: 2px solid var(--teal);
 }
-.day li {
+.loop li {
   position: relative;
   padding-block-start: 30px;
 }
-.day li::before {
+.loop li::before {
   content: "";
   position: absolute;
   inset-block-start: 0;
@@ -184,19 +189,22 @@
   border-radius: 50%;
   background: #0e2c63;
 }
-.day time {
+.loop small {
   color: #8ee5d9;
   font-size: 11px;
 }
-.day b {
+.loop b {
   display: block;
   color: white;
   font-size: 15px;
   margin-block: 4px;
 }
-.day p {
-  font-size: 11px;
-  color: #bdcee6;
+.loop > p {
+  margin-block-start: 30px;
+  color: #cfdded;
+  font-size: 15px;
+  font-weight: 650;
+  max-width: 60ch;
 }
 
 @media (max-width: 800px) {
@@ -221,12 +229,12 @@
     flex-direction: column;
     align-items: start;
   }
-  .day ol {
+  .loop ol {
     grid-template-columns: repeat(5, minmax(120px, 1fr));
     overflow-x: auto;
     padding-block-end: 12px;
   }
-  .day ol::before {
+  .loop ol::before {
     display: none;
   }
 }
@@ -237,6 +245,9 @@
   }
   .intro {
     font-size: 14px;
+  }
+  .statement {
+    font-size: 17px;
   }
   .list {
     grid-template-columns: 1fr;
@@ -252,15 +263,15 @@
     flex-direction: row;
     align-items: center;
   }
-  .day li {
+  .loop li {
     display: grid;
     grid-template-columns: 48px 1fr;
     gap: 0 12px;
   }
-  .day b {
+  .loop b {
     margin: 0;
   }
-  .day p {
-    grid-column: 2;
+  .loop > p {
+    font-size: 14px;
   }
 }

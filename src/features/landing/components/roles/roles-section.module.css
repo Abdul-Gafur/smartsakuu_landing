@@ -14,7 +14,6 @@
 .tabs button {
   text-align: start;
   border: 0;
-  border-radius: 5px;
   padding: 16px 19px;
   background: var(--paper);
   color: var(--muted);
@@ -46,11 +45,7 @@
   display: grid;
   gap: 10px;
 }
-.benefits li {
-  background: var(--paper);
-  border-radius: 5px;
-  padding: 17px 19px;
-}
+
 .benefits b {
   display: block;
   font-size: 12px;
@@ -79,7 +74,6 @@
   background: var(--mint);
   padding: 18px 22px;
   font-size: 11px;
-  border-radius: 6px;
 }
 .image figcaption b {
   display: block;
@@ -89,7 +83,7 @@
 .image.product img {
   object-fit: contain;
   height: auto;
-  border-radius: 6px;
+  border-radius: 0px;
   background: var(--paper);
   padding: 8px;
 }

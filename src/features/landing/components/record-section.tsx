@@ -4,10 +4,10 @@ import { Icon } from "@/components/ui/icon";
 import { cn } from "@/utils/cn";
 
 import {
+  learningLoop,
   recordFields,
   recordInputs,
   recordOutputs,
-  schoolDaySteps,
 } from "../constants";
 import { lineBreaks } from "../lib/rich-text";
 import styles from "./record-section.module.css";
@@ -38,6 +38,7 @@ export function RecordSection() {
           <span className={cn("label", styles.label)}>{t("label")}</span>
           <h2 id="record-title">{t.rich("title", lineBreaks)}</h2>
           <p className={cn("body-copy", styles.intro)}>{t("body")}</p>
+          <p className={styles.statement}>{t("statement")}</p>
         </div>
         <div className={styles.map}>
           <svg
@@ -91,17 +92,16 @@ export function RecordSection() {
             </ul>
           </div>
         </div>
-        <div className={styles.day}>
-          <h3>{t("day.title")}</h3>
+        <div className={styles.loop}>
+          <h3>{t("loop.title")}</h3>
           <ol>
-            {schoolDaySteps.map((step) => (
+            {learningLoop.map((step, index) => (
               <li key={step}>
-                <time>{t(`day.steps.${step}.time`)}</time>
-                <b>{t(`day.steps.${step}.title`)}</b>
-                <p>{t(`day.steps.${step}.body`)}</p>
+                <b>{t(`loop.steps.${step}`)}</b>
               </li>
             ))}
           </ol>
+          <p>{t("loop.note")}</p>
         </div>
       </div>
     </section>

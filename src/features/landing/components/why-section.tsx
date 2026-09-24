@@ -3,12 +3,7 @@ import Image from "next/image";
 
 import { cn } from "@/utils/cn";
 
-import {
-  UNICEF_SOURCE_URL,
-  images,
-  impactStats,
-  journeySteps,
-} from "../constants";
+import { UNICEF_SOURCE_URL, images, impactStats } from "../constants";
 import styles from "./why-section.module.css";
 
 export function WhySection() {
@@ -42,24 +37,18 @@ export function WhySection() {
             {t("source")}
           </a>
         </div>
-        <figure className={styles.photo}>
+        <figure>
           <div className={styles.visual}>
             <Image
               {...images.classroom}
               alt={t("imageAlt")}
               sizes="(max-width: 800px) 100vw, 610px"
             />
-            <ol className={styles.steps} aria-label={t("stepsLabel")}>
-              {journeySteps.map((step) => (
-                <li key={step}>
-                  <span>{t(`steps.${step}.label`)}</span>
-                  <strong>{t(`steps.${step}.title`)}</strong>
-                  <p>{t(`steps.${step}.body`)}</p>
-                </li>
-              ))}
-            </ol>
+            <figcaption className={styles.statement}>
+              {t("statement.lead")}
+              <strong>{t("statement.emphasis")}</strong>
+            </figcaption>
           </div>
-          <figcaption className={styles.caption}>{t("caption")}</figcaption>
         </figure>
       </div>
     </section>

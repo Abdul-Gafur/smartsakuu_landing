@@ -19,11 +19,11 @@ export function MemorySection() {
           <span className={cn("label", styles.label)}>{t("label")}</span>
           <h2 id="memory-title">{t("title")}</h2>
           <p className={cn("body-copy", styles.intro)}>{t("body")}</p>
+          <p className={styles.stepsLabel}>{t("stepsLabel")}</p>
           <ul className={styles.timeline}>
             {memorySteps.map((step) => (
               <li key={step}>
-                <b>{t(`steps.${step}.title`)}</b>
-                <p>{t(`steps.${step}.body`)}</p>
+                <b>{t(`steps.${step}`)}</b>
               </li>
             ))}
           </ul>

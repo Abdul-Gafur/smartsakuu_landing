@@ -20,6 +20,7 @@ export function Hero() {
             {t.rich("Hero.title", lineBreaks)}
           </h1>
           <p className={cn("body-copy", styles.intro)}>{t("Hero.body")}</p>
+          <p className={cn("body-copy", styles.detail)}>{t("Hero.detail")}</p>
           <div className="actions">
             <DemoTrigger className="button">
               {t("Common.bookDemo")}

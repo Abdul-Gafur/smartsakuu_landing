@@ -38,6 +38,7 @@ export function ContactSection() {
                 {t("Contact.talk")}
               </a>
             </div>
+            <p className={styles.closing}>{t("Contact.closing")}</p>
           </div>
           <div className={styles.photo}>
             <Image
