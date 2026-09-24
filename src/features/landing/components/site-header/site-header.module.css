@@ -33,9 +33,82 @@
 .navLinks a:hover {
   color: var(--blue);
 }
+/* Keeps the language switcher right beside the demo button. */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
 .demo {
   background: var(--navy);
   min-height: 44px;
+}
+/* Language switcher: a dropdown on wide screens, a list in the mobile menu. */
+.language {
+  position: relative;
+  flex-shrink: 0;
+}
+.languageButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding-inline: 10px;
+  color: var(--navy);
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.languageButton:hover,
+.languageButton[aria-expanded="true"] {
+  background: var(--paper);
+}
+.languageButton svg {
+  width: 18px;
+  height: 18px;
+}
+.languageMenu {
+  position: absolute;
+  inset-block-start: calc(100% + 6px);
+  inset-inline-end: 0;
+  min-width: 170px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: white;
+  border-radius: 6px;
+  box-shadow:
+    0 0 0 1px rgb(17 36 72 / 8%),
+    0 14px 34px rgb(17 36 72 / 16%);
+}
+.languageMenu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 40px;
+  padding-inline: 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+.languageMenu a:hover {
+  background: var(--paper);
+}
+.languageMenu a[aria-current="page"] {
+  color: var(--blue);
+}
+.languageMenu svg {
+  width: 16px;
+  height: 16px;
+}
+.languageList {
+  display: none;
 }
 .menuButton {
   display: none;
@@ -48,13 +121,23 @@
 
 @media (max-width: 1050px) {
   .navLinks {
-    gap: 18px;
+    gap: 12px;
   }
   .inner {
-    gap: 20px;
+    gap: 16px;
+  }
+  .demo {
+    padding-inline: 18px;
+  }
+  .languageButton {
+    padding-inline: 6px;
   }
   .brand img {
     width: 156px;
+  }
+  /* The globe alone keeps longer translated nav labels on one line. */
+  .languageCode {
+    display: none;
   }
 }
 @media (max-width: 800px) {
@@ -76,11 +159,54 @@
   .navLinks a {
     font-size: 15px;
   }
+  .language {
+    display: none;
+  }
+  .languageList {
+    display: grid;
+    gap: 8px;
+    margin-block-start: 10px;
+    padding-block-start: 16px;
+    border-block-start: 1px solid var(--paper);
+  }
+  .languageList span {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 650;
+  }
+  .languageList ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .navLinks .languageList a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 4px;
+    background: var(--paper);
+    font-size: 14px;
+  }
+  .navLinks .languageList a[aria-current="page"] {
+    color: white;
+    background: var(--navy);
+  }
+  .languageList svg {
+    width: 16px;
+    height: 16px;
+  }
   .menuButton {
     display: inline-flex;
   }
-  .demo {
+  .actions {
     margin-inline-start: auto;
+  }
+  .demo {
     min-height: 40px;
     font-size: 11px;
     padding: 10px 14px;

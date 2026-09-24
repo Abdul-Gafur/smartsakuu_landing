@@ -20,7 +20,11 @@
         "ghana": "In Ghana"
       },
       "openMenu": "Open menu",
-      "closeMenu": "Close menu"
+      "closeMenu": "Close menu",
+      "language": {
+        "label": "Language",
+        "current": "Language: {language}"
+      }
     },
     "Hero": {
       "title": "Run the school.<br></br>Understand every learner.<br></br>Improve learning.",
@@ -600,6 +604,13 @@
       "talk": "Talk to the SmartSakuu team",
       "closing": "Run the school. Understand every learner. Improve learning.",
       "imageAlt": "Schoolchildren learning together in the classroom"
+    },
+    "ContactDetails": {
+      "title": "Contact us",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "location": "Location",
+      "locationValue": "Wa, Upper West Region, Ghana"
     },
     "Footer": {
       "tagline": "© {year} SmartSakuu. Digital education infrastructure for African schools.<br></br>Starting in Ghana. Built around people."

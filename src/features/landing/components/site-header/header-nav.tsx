@@ -11,6 +11,8 @@ type HeaderNavProps = {
   links: { href: string; label: string }[];
   openLabel: string;
   closeLabel: string;
+  /** Rendered at the end of the link list; shown only in the collapsed menu. */
+  menuFooter?: ReactNode;
   /** Rendered between the links and the menu button. */
   children: ReactNode;
 };
@@ -21,6 +23,7 @@ export function HeaderNav({
   links,
   openLabel,
   closeLabel,
+  menuFooter,
   children,
 }: HeaderNavProps) {
   const [open, setOpen] = useState(false);
@@ -51,6 +54,7 @@ export function HeaderNav({
             {link.label}
           </a>
         ))}
+        {menuFooter}
       </nav>
       {children}
       <button

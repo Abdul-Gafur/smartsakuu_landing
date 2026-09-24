@@ -1,1 +1,658 @@
-{}
+{
+  "Metadata": {
+    "siteName": "SmartSakuu",
+    "title": "SmartSakuu | Gérez l’école. Comprenez chaque élève. Améliorez les apprentissages.",
+    "description": "SmartSakuu fournit aux écoles à faible maturité numérique l’infrastructure nécessaire pour constituer des dossiers d’élèves fiables, puis s’appuie sur l’IA pour aider les enseignants à repérer les lacunes d’apprentissage, préparer des cours fondés sur les résultats réels de la classe, guider un apprentissage ciblé et mesurer l’efficacité du soutien apporté."
+  },
+  "Landing": {
+    "Common": {
+      "skipLink": "Aller au contenu",
+      "brandName": "SmartSakuu",
+      "brandHome": "Accueil SmartSakuu",
+      "bookDemo": "Réserver une démo"
+    },
+    "Header": {
+      "navLabel": "Navigation principale",
+      "nav": {
+        "problem": "Le problème",
+        "record": "Comment ça marche",
+        "roles": "L’IA en contexte",
+        "ghana": "Au Ghana"
+      },
+      "openMenu": "Ouvrir le menu",
+      "closeMenu": "Fermer le menu",
+      "language": {
+        "label": "Langue",
+        "current": "Langue : {language}"
+      }
+    },
+    "Hero": {
+      "title": "Gérez l’école.<br></br>Comprenez chaque élève.<br></br>Améliorez les apprentissages.",
+      "body": "SmartSakuu fournit aux écoles à faible maturité numérique l’infrastructure nécessaire pour constituer des dossiers d’élèves fiables, puis s’appuie sur l’IA pour aider les enseignants à repérer les lacunes d’apprentissage, préparer des cours fondés sur les résultats réels de la classe, guider un apprentissage ciblé et mesurer l’efficacité du soutien apporté.",
+      "detail": "La plateforme réunit tout le parcours scolaire de l’élève dans un seul dossier, pour que l’école repère plus tôt les lacunes d’apprentissage, intervienne avec le soutien adapté et vérifie si ce soutien porte ses fruits.",
+      "howItWorks": "Voir comment ça marche",
+      "footnote": "Conçu pour les chefs d’établissement, les enseignants, les élèves et les parents. En commençant par le Ghana.",
+      "studentsImageAlt": "Des écoliers qui travaillent ensemble sur leurs leçons",
+      "teacherImageAlt": "Une enseignante qui anime une discussion en classe",
+      "caption": "L’humain au centre. Toujours.",
+      "schoolNote": {
+        "eyebrow": "Une école qui reste connectée",
+        "title": "Un seul dossier.<br></br>Une vision plus complète.",
+        "footer": "De l’inscription au jour de l’examen"
+      },
+      "learningNote": {
+        "title": "Un peu de contexte.<br></br>Une prochaine étape plus juste.",
+        "body": "Un accompagnement pédagogique qui part du dossier scolaire de l’élève."
+      }
+    },
+    "Problem": {
+      "label": "Le problème",
+      "title": "Les écoles connaissent souvent le résultat. Elles ne voient pas toujours la tendance qui se cache derrière.",
+      "body": "Dans de nombreuses écoles, les informations sur les élèves sont dispersées entre registres papier, tableurs, bulletins, cahiers et ce que sait chaque membre du personnel.",
+      "gaps": {
+        "lead": "Une école peut enregistrer les présences, les frais de scolarité et les résultats d’examen, sans pour autant parvenir à voir :",
+        "items": {
+          "behind": "quels élèves commencent à prendre du retard",
+          "topics": "sur quelles notions ils butent de manière répétée",
+          "warning": "si les absences ou le désengagement deviennent un signal d’alerte",
+          "support": "quel soutien a déjà été apporté",
+          "helped": "si ce soutien a été utile",
+          "dropout": "quels élèves risquent le décrochage scolaire"
+        }
+      },
+      "score": {
+        "sampleLabel": "Exemple de dossier d’élève · JHS 2B",
+        "value": "48 %",
+        "title": "Un élève obtient 48 %<br></br>en mathématiques.",
+        "body": "L’école connaît la note. Mais la note seule ne dit pas si cet élève a eu des difficultés en algèbre sur plusieurs évaluations, si ses résultats sont en baisse, si son assiduité a changé, quel soutien lui a déjà été apporté, ni si ce soutien a fonctionné.",
+        "caption": "L’histoire de cet élève ne s’arrête pas là."
+      },
+      "evidence": {
+        "controlsLabel": "Comparer une note avec le dossier unifié",
+        "scoreView": "La note seule",
+        "recordView": "Le dossier unifié",
+        "rows": {
+          "mastery": {
+            "term": "Algèbre",
+            "value": "Faible lors des trois dernières évaluations.",
+            "empty": "La note n’indique pas quelle notion continue de poser problème."
+          },
+          "history": {
+            "term": "Résultats",
+            "value": "61 % au trimestre dernier, 48 % aujourd’hui. En baisse.",
+            "empty": "Une seule note ne montre pas la tendance."
+          },
+          "attendance": {
+            "term": "Assiduité",
+            "value": "96 %. Pas de changement.",
+            "empty": "L’assiduité est consignée dans un registre papier."
+          },
+          "support": {
+            "term": "Soutien apporté",
+            "value": "Exercices d’algèbre supplémentaires au trimestre dernier.",
+            "empty": "Ce qui a été tenté reste dans le cahier d’un enseignant."
+          },
+          "outcome": {
+            "term": "Cela a-t-il fonctionné ?",
+            "value": "Pas encore. La lacune en algèbre persiste.",
+            "empty": "Personne ne peut facilement dire si le soutien a été utile."
+          }
+        },
+        "result": "La tendance apparaît : une lacune persistante en algèbre que le soutien du trimestre dernier n’a pas comblée.",
+        "resultEmpty": "Les écoles savent souvent ce qui s’est passé. La question plus difficile est de savoir pourquoi cela se répète et ce qu’il faut faire ensuite."
+      },
+      "closing": {
+        "title": "Un élève ne devrait pas avoir à rencontrer les mêmes difficultés encore et encore avant que quelqu’un ne voie la tendance.",
+        "body": "Les informations nécessaires pour voir cette tendance existent peut-être déjà quelque part dans l’école. Il se peut aussi qu’elles n’aient jamais été consignées sous une forme que l’école puisse exploiter.",
+        "statement": "SmartSakuu comble l’écart entre ce qu’une école enregistre et ce qu’elle peut en comprendre pour agir."
+      }
+    },
+    "Why": {
+      "label": "Pourquoi c’est important",
+      "title": "Les lacunes d’apprentissage sont plus difficiles à combler lorsqu’elles sont repérées trop tard.",
+      "body": "Beaucoup d’élèves avancent dans leur scolarité en traînant des difficultés non résolues d’un trimestre à l’autre.",
+      "stats": {
+        "literacy": {
+          "value": "60 %+",
+          "body": "des enfants au Ghana n’atteignent pas un niveau de base en lecture et en calcul à la fin de l’école primaire."
+        },
+        "schooling": {
+          "value": "11,6 → 5,7",
+          "body": "années de scolarité attendues équivalent à environ 5,7 années d’apprentissage effectif."
+        }
+      },
+      "source": "Source : UNICEF Ghana, Education Budget Brief 2025 (en anglais) ↗",
+      "imageAlt": "Des élèves concentrés, qui travaillent ensemble sur leurs devoirs",
+      "statement": {
+        "lead": "Le défi ne consiste pas simplement à collecter plus de données.",
+        "emphasis": "Il s’agit de rendre utiles, suffisamment tôt, les informations que les écoles produisent déjà, pour intervenir et soutenir l’élève."
+      }
+    },
+    "Digitize": {
+      "label": "Pourquoi numériser l’école ?",
+      "title": "Parce qu’une IA utile commence par des informations fiables.",
+      "body": "Si les présences restent dans un registre papier, l’historique des évaluations dans des tableurs, les interventions dans les cahiers des enseignants et des informations essentielles dans la tête des gens, ni l’école ni l’IA ne disposent d’une vision fiable sur laquelle s’appuyer.",
+      "foundation": {
+        "lead": "C’est pourquoi la gestion scolaire est indissociable de la proposition pédagogique de SmartSakuu.",
+        "emphasis": "Elle en constitue le socle numérique.",
+        "processesLabel": "SmartSakuu réunit les processus quotidiens de l’école dans un seul environnement :",
+        "processes": {
+          "admissions": "Inscriptions",
+          "records": "Dossiers des élèves",
+          "attendance": "Présences",
+          "fees": "Frais et paiements",
+          "hr": "Ressources humaines",
+          "assessments": "Évaluations",
+          "examinations": "Examens",
+          "curriculum": "Programmes scolaires",
+          "teaching": "Enseignement et apprentissage",
+          "reporting": "Rapports"
+        },
+        "record": "Au fil du fonctionnement de l’école, ces activités constituent progressivement un dossier éducatif continu pour chaque élève."
+      },
+      "start": {
+        "title": "Partir des besoins concrets de l’école.",
+        "body": "Les écoles ont besoin de systèmes fiables, qu’elles soient prêtes ou non à utiliser l’IA. Elles peuvent commencer par les fonctionnalités dont elles ont besoin, puis les étendre au fil du temps.",
+        "steps": {
+          "operations": "Le système de gestion est le point d’entrée.",
+          "record": "Le dossier de l’élève devient le socle de l’intelligence.",
+          "ai": "L’IA et les outils d’apprentissage en accroissent la valeur."
+        }
+      }
+    },
+    "Record": {
+      "label": "L’idée centrale du produit",
+      "title": "Un élève. Un dossier.<br></br>Plus utile à chaque trimestre.",
+      "body": "Le dossier d’un élève doit montrer plus que des notes. Une seule évaluation peut alimenter un bulletin, révéler une notion durablement fragile, orienter le prochain cours de l’enseignant, cibler les révisions de l’élève et aider un parent à comprendre où un soutien est nécessaire.",
+      "statement": "Les dossiers qui servent à gérer l’école deviennent des dossiers qui aident l’élève.",
+      "inputs": {
+        "title": "Il relie",
+        "items": {
+          "taught": {
+            "title": "Ce qui a été enseigné",
+            "body": "Programmes et leçons GES / NaCCA"
+          },
+          "performed": {
+            "title": "Les résultats de l’élève",
+            "body": "Interrogations, examens et contrôle continu"
+          },
+          "support": {
+            "title": "Le soutien apporté",
+            "body": "Interventions, révisions et exercices"
+          },
+          "school": {
+            "title": "Les dossiers de l’école",
+            "body": "Inscriptions, présences et frais"
+          }
+        }
+      },
+      "core": {
+        "title": "Dossier élève unifié",
+        "sample": "Exemple d’élève · JHS 2B",
+        "fields": {
+          "history": {
+            "term": "Parcours scolaire",
+            "value": "3 trimestres"
+          },
+          "focus": {
+            "term": "Priorité d’apprentissage",
+            "value": "Équations du premier degré"
+          },
+          "curriculum": {
+            "term": "Avancement du programme",
+            "value": "Domaine 2 sur 4"
+          },
+          "activity": {
+            "term": "Activité d’apprentissage",
+            "value": "9 tâches cette semaine"
+          },
+          "attendance": {
+            "term": "Assiduité",
+            "value": "96 %"
+          },
+          "support": {
+            "term": "Soutien apporté",
+            "value": "Révisions ciblées"
+          }
+        },
+        "note": "Dossier donné à titre d’exemple. L’accès dépend du rôle de chaque utilisateur."
+      },
+      "outputs": {
+        "title": "Pour que l’école puisse voir",
+        "items": {
+          "persists": {
+            "title": "Où la difficulté persiste",
+            "body": "Les notions fragiles d’une évaluation et d’un trimestre à l’autre"
+          },
+          "changed": {
+            "title": "Si les résultats ont évolué",
+            "body": "Avant et après le soutien apporté"
+          },
+          "next": {
+            "title": "Ce qui pourrait demander de l’attention ensuite",
+            "body": "Pour l’enseignant, l’élève et le parent"
+          },
+          "operations": {
+            "title": "Le fonctionnement de l’école",
+            "body": "Présences, frais et inscriptions en une seule vue"
+          }
+        }
+      },
+      "loop": {
+        "title": "Voir la lacune. Soutenir l’élève. Voir ce qui a changé.",
+        "steps": {
+          "identify": "Identifier la lacune",
+          "support": "Apporter un soutien",
+          "reassess": "Réévaluer",
+          "changed": "Voir ce qui a changé",
+          "next": "Décider de la suite"
+        },
+        "note": "L’objectif n’est pas seulement d’enregistrer des résultats. Il s’agit d’aider les écoles à suivre ce qui se passe après le résultat."
+      }
+    },
+    "Value": {
+      "label": "Ce que SmartSakuu change",
+      "title": "Un seul dossier unifié. Une valeur différente pour chacun.",
+      "roles": {
+        "leaders": {
+          "title": "Chefs d’établissement",
+          "body": "Consulter les informations pédagogiques et administratives sans avoir à reconstituer la vue d’ensemble à partir de dossiers papier, de tableurs et de rapports épars.",
+          "quoteLabel": "Demandez à l’IA de l’école :",
+          "quote": "« Quels élèves ont besoin d’un soutien scolaire ce trimestre, et quelles lacunes d’apprentissage reviennent le plus souvent ? »",
+          "link": "Découvrir l’IA de l’école"
+        },
+        "teachers": {
+          "title": "Enseignants",
+          "body": "Voir ce qui a posé problème à la classe avant de planifier la suite. SmartSakuu croise les exigences du programme avec les résultats pertinents de la classe pour favoriser un enseignement plus ciblé.",
+          "link": "Découvrir le planificateur de cours"
+        },
+        "students": {
+          "title": "Élèves",
+          "body": "Bénéficier de révisions, d’un tutorat par IA et d’une préparation au BECE/WASSCE centrés sur les notions qui demandent le plus d’attention, au lieu de traiter tout le programme de la même façon.",
+          "link": "Découvrir l’accompagnement des élèves"
+        },
+        "parents": {
+          "title": "Parents",
+          "body": "Passer de :",
+          "from": "« Votre enfant a de mauvais résultats. »",
+          "toLabel": "à :",
+          "to": "« Voici où votre enfant a besoin d’aide, voici ce que fait l’école, et voici comment vous pouvez l’accompagner. »"
+        }
+      }
+    },
+    "Roles": {
+      "label": "L’IA en contexte",
+      "title": "Une IA qui part du contexte de l’école.",
+      "body": "Une IA générique part d’une page blanche. SmartSakuu s’appuie sur le programme, l’historique des évaluations, les résultats par notion et l’activité d’apprentissage dont l’école dispose déjà.",
+      "tablistLabel": "L’IA en contexte, par rôle",
+      "tabs": {
+        "teachers": "Pour les enseignants",
+        "students": "Pour les élèves",
+        "leaders": "Pour les chefs d’établissement"
+      },
+      "panels": {
+        "teachers": {
+          "title": "Un planificateur de cours IA qui tient compte du contexte",
+          "body": "SmartSakuu peut rédiger des plans de cours, des fiches pédagogiques, des activités, des quiz, des devoirs et des exercices différenciés.",
+          "benefits": {
+            "generic": {
+              "title": "Une IA générique peut produire :",
+              "body": "« Un plan de cours sur les équations du premier degré. »"
+            },
+            "contextual": {
+              "title": "SmartSakuu peut aider à préparer :",
+              "body": "« Le prochain cours sur les équations du premier degré pour cette classe de JHS 2, centré sur les notions qui ont posé problème aux élèves lors de la dernière évaluation, avec des activités supplémentaires pour ceux qui ont besoin de plus de soutien. »"
+            },
+            "control": {
+              "title": "L’enseignant garde la main",
+              "body": "L’enseignant relit, adapte et valide les contenus avant de les utiliser."
+            }
+          },
+          "imageAlt": "Exemple de plan de cours SmartSakuu avec des objectifs d’apprentissage et des activités différenciées",
+          "captionTitle": "Conçu autour du cours que vous devez donner.",
+          "caption": "Un exemple de cours de JHS 2 sur les équations du premier degré."
+        },
+        "students": {
+          "title": "Des révisions qui partent de là où l’élève a besoin d’aide.",
+          "body": "Le même contexte de l’élève oriente les révisions, le tutorat par IA, les annales et la préparation au BECE/WASSCE.",
+          "benefits": {
+            "focus": {
+              "title": "Pas tout de la même façon",
+              "body": "Plus d’attention là où les données montrent qu’elle est nécessaire."
+            },
+            "tutor": {
+              "title": "Un tutorat par IA contextualisé",
+              "body": "Des explications et des exercices sur les notions que l’élève trouve difficiles."
+            },
+            "incentives": {
+              "title": "Des incitations aux vrais progrès",
+              "body": "Des récompenses pour une activité significative, la régularité et les progrès."
+            }
+          },
+          "imageAlt": "Des élèves qui apprennent côte à côte",
+          "captionTitle": "De « Je ne comprends pas » à « Je sais par où commencer ».",
+          "caption": "Leçons, exercices et soutien reliés à un même élève."
+        },
+        "leaders": {
+          "title": "Interrogez l’ensemble des dossiers de l’école.",
+          "body": "Les chefs d’établissement autorisés peuvent utiliser l’IA de l’école pour interroger les informations institutionnelles et scolaires disponibles.",
+          "benefits": {
+            "sources": {
+              "title": "Des réponses rattachées aux dossiers",
+              "body": "L’IA de l’école s’appuie sur les dossiers de l’école et renvoie aux informations qui fondent chaque réponse."
+            },
+            "access": {
+              "title": "Réservé aux chefs d’établissement autorisés",
+              "body": "Ce que l’IA de l’école peut consulter dépend du rôle de l’utilisateur."
+            }
+          }
+        }
+      }
+    },
+    "LeaderAi": {
+      "name": "IA de l’école",
+      "badge": "Démo à titre d’illustration · données d’école fictives",
+      "empty": "Posez une question simple. Les réponses proviennent des dossiers autorisés de l’école.",
+      "placeholder": "Posez une question sur votre école…",
+      "inputLabel": "Posez une question à l’IA de l’école sur votre établissement",
+      "send": "Envoyer la question",
+      "prompts": {
+        "learners": "Qui reste en difficulté en maths en JHS 2 ?",
+        "topics": "Quelles notions reviennent le plus ?",
+        "trend": "Comment les maths ont-elles évolué sur trois trimestres ?"
+      },
+      "answers": {
+        "learners": {
+          "lines": [
+            "12 élèves de JHS 2 ont obtenu moins de 50 % en mathématiques à chacune des trois dernières évaluations.",
+            "• 9 d’entre eux sont en JHS 2B, et la plupart ont la même faiblesse : les équations du premier degré.",
+            "• 5 n’ont pas encore terminé les révisions d’algèbre données au trimestre dernier.",
+            "Prochaine étape suggérée : faire le point sur le groupe de JHS 2B avec l’enseignant de mathématiques cette semaine."
+          ],
+          "sources": "Sources : Exercices en classe · Contrôles de mi-trimestre · Activités de révision"
+        },
+        "topics": {
+          "lines": [
+            "Parmi les élèves signalés pour un soutien ce trimestre, trois notions reviennent le plus souvent :",
+            "• Équations du premier degré (JHS 2) — 21 élèves",
+            "• Fractions (JHS 1) — 17 élèves",
+            "• Compréhension écrite (JHS 1) — 14 élèves"
+          ],
+          "sources": "Sources : Évaluations trimestrielles · Maîtrise par notion · Dossiers de soutien"
+        },
+        "trend": {
+          "lines": [
+            "La moyenne en mathématiques au JHS est passée de 51 % à 56 % sur les trois derniers trimestres.",
+            "• Le JHS 1 a le plus progressé, après un soutien ciblé sur les fractions.",
+            "• Le JHS 2 a reculé ce trimestre, surtout en algèbre."
+          ],
+          "sources": "Sources : Historique des évaluations · Dossiers de soutien"
+        },
+        "attention": {
+          "lines": [
+            "Trois points demandent votre attention aujourd’hui :",
+            "• JHS 2B — 9 élèves ont obtenu moins de 40 % en équations du premier degré, et deux semaines se sont écoulées depuis que la notion a été réenseignée.",
+            "• Assiduité — en baisse de 12 % cette semaine en JHS 1A, surtout les lundis et les vendredis.",
+            "• Frais — 14 familles ont un solde du deuxième trimestre impayé depuis plus de 30 jours."
+          ],
+          "sources": "Sources : Évaluations du 2e trimestre · Registre d’appel quotidien · Registre des frais"
+        },
+        "fees": {
+          "lines": [
+            "Le recouvrement du deuxième trimestre atteint 72 % des frais attendus.",
+            "• 18 400 GH₵ restent impayés, répartis sur 41 élèves.",
+            "• 14 comptes ont plus de 30 jours de retard ; 6 d’entre eux ont un échéancier de paiement convenu."
+          ],
+          "sources": "Sources : Registre des frais · Historique des paiements"
+        },
+        "attendance": {
+          "lines": [
+            "L’assiduité de cette semaine est de 91 %, contre 94 % la semaine dernière.",
+            "• La classe de JHS 1A enregistre la plus forte baisse (−12 %), surtout les lundis et les vendredis.",
+            "• 5 élèves ont manqué trois jours ou plus au cours des deux dernières semaines."
+          ],
+          "sources": "Sources : Registre d’appel quotidien"
+        },
+        "other": {
+          "lines": [
+            "Dans une école réelle, je répondrais à partir de vos dossiers autorisés : évaluations, présences, frais et activités d’apprentissage.",
+            "Dans cette démo, essayez de poser une question sur les élèves qui ont besoin de soutien, les notions fragiles les plus fréquentes, l’évolution des résultats, les frais ou l’assiduité."
+          ],
+          "sources": "Sources : Données d’école fictives"
+        }
+      }
+    },
+    "Stories": {
+      "label": "Une journée dans une école connectée",
+      "title": "Une école. Des journées différentes.<br></br>Une vision partagée.",
+      "tablistLabel": "Récits scolaires par public",
+      "tabs": {
+        "students": "Élèves",
+        "teachers": "Enseignants",
+        "parents": "Parents"
+      },
+      "previous": "Récit précédent",
+      "next": "Récit suivant",
+      "videoFallback": "Votre navigateur ne prend pas en charge la lecture de vidéos.",
+      "slides": {
+        "students": {
+          "videoLabel": "Vidéo d’illustration : des élèves qui apprennent ensemble",
+          "eyebrow": "La journée d’un élève",
+          "title": "Une notion difficile.<br></br>Un chemin plus clair pour avancer.",
+          "body": "Une mauvaise note en algèbre devient un point de départ. Le parcours d’apprentissage propose des exercices ciblés, et le tuteur IA explique l’étape sur laquelle l’élève bute à chaque fois.",
+          "cta": "Découvrir l’accompagnement des élèves"
+        },
+        "teachers": {
+          "videoLabel": "Vidéo d’illustration : un enseignant qui travaille avec ses élèves",
+          "eyebrow": "La journée d’un enseignant",
+          "title": "Moins de temps à rassembler les pièces du puzzle. Plus de temps pour enseigner.",
+          "body": "Les résultats des derniers quiz montrent où la classe a des difficultés. L’enseignant adapte une ébauche de cours, donne des exercices à chaque groupe et assure le suivi des élèves qui ont besoin de plus d’aide.",
+          "cta": "Découvrir l’accompagnement des enseignants"
+        },
+        "parents": {
+          "videoLabel": "Vidéo d’illustration : des parents qui aident un enfant à faire ses devoirs",
+          "eyebrow": "La journée d’un parent",
+          "title": "Savoir comment aider avant l’arrivée du bulletin.",
+          "body": "Où mon enfant a-t-il des difficultés, et comment puis-je l’aider ? Un parent voit les progrès de son enfant, la priorité de la semaine et un mot de l’enseignant, avec un point précis à travailler à la maison.",
+          "cta": "Voir l’espace parents lors d’une démo"
+        }
+      },
+      "disclosure": "Récits illustratifs d’une journée d’école, qui montrent comment SmartSakuu est conçu pour aider. Ces scènes issues de banques de vidéos ne sont pas des entretiens avec des clients. Images : <students>Monstera Production</students>, <teachers>Pavel Danilyuk</teachers> et <parents>Dziana Hasanbekava</parents> / Pexels."
+    },
+    "Exam": {
+      "label": "Préparation aux examens",
+      "title": "Une préparation au BECE et au WASSCE qui s’adapte à l’élève.",
+      "body": "La préparation aux examens ne devrait pas toujours repartir de l’ensemble du programme. SmartSakuu peut s’appuyer sur l’historique des évaluations et les résultats d’apprentissage pour aider les élèves à se concentrer sur les points où ils ont le plus à travailler.",
+      "resourcesLabel": "Les élèves ont accès à :",
+      "resources": {
+        "pastQuestions": "Annales",
+        "timed": "Exercices chronométrés",
+        "mocks": "Examens blancs",
+        "revision": "Révisions guidées",
+        "tutoring": "Tutorat par IA",
+        "topics": "Exercices par notion"
+      },
+      "incentives": "Les récompenses valorisent une activité d’apprentissage significative, la régularité et les progrès, plutôt que la simple participation."
+    },
+    "Ghana": {
+      "label": "En service aujourd’hui",
+      "title": "Déjà utilisé dans des écoles ghanéennes.",
+      "stats": {
+        "schools": {
+          "value": "8",
+          "body": "écoles"
+        },
+        "learners": {
+          "value": "3 000+",
+          "body": "élèves"
+        },
+        "teachers": {
+          "value": "100+",
+          "body": "enseignants"
+        }
+      },
+      "body": "SmartSakuu est actuellement déployé dans des écoles de la région du Haut-Ghana occidental (Upper West). Il est conçu autour des structures des programmes GES/NaCCA, accompagne la préparation au BECE/WASSCE et a noué un partenariat avec la section municipale de Wa de l’Association nationale des écoles privées du Ghana (GNAPS).",
+      "measure": "Nous nous appuyons sur ces déploiements pour améliorer le produit et mesurer ce qui change pour les écoles, les enseignants et les élèves.",
+      "local": {
+        "title": "Conçu autour des écoles ghanéennes. Pensé pour s’adapter à d’autres contextes.",
+        "lead": "SmartSakuu part du système éducatif ghanéen :",
+        "body": "La priorité immédiate est de faire fonctionner le modèle et de démontrer une valeur mesurable au Ghana. Ensuite, les programmes, les examens, les langues, les moyens de paiement et les processus scolaires pourront être adaptés à d’autres systèmes éducatifs africains."
+      },
+      "facts": {
+        "curriculum": "Programmes GES/NaCCA",
+        "exams": "BECE et WASSCE",
+        "workflows": "Processus scolaires locaux",
+        "payments": "Moyens de paiement locaux",
+        "languages": "Prise en charge multilingue"
+      }
+    },
+    "Memory": {
+      "label": "Mémoire institutionnelle",
+      "title": "Le savoir de l’école ne devrait pas disparaître quand les personnes s’en vont.",
+      "body": "L’historique des élèves, l’assiduité, les progrès scolaires, les interventions et les informations institutionnelles doivent rester exploitables même lorsque les enseignants ou les administrateurs changent.",
+      "stepsLabel": "SmartSakuu aide l’école à conserver :",
+      "steps": {
+        "happened": "Ce qui s’est passé",
+        "tried": "Ce qui a été tenté",
+        "changed": "Ce qui a changé",
+        "attention": "Ce qui demande encore de l’attention"
+      },
+      "example": {
+        "eyebrow": "Une question pour l’IA de l’école",
+        "question": "« Comment les résultats en mathématiques ont-ils évolué au cours des trois dernières années ? »",
+        "answer": "SmartSakuu s’appuie sur les dossiers historiques autorisés pour mettre en évidence les tendances et les points faibles persistants, en les reliant aux classes, aux évaluations et aux interventions qui les expliquent.",
+        "tags": {
+          "assessments": "Historique des évaluations",
+          "classes": "Dossiers de classe",
+          "interventions": "Interventions"
+        },
+        "note": "Exemple de question. Les réponses dépendent des dossiers dont dispose l’école."
+      }
+    },
+    "Responsible": {
+      "label": "IA responsable",
+      "title": "L’IA accompagne les personnes. Les personnes restent responsables.",
+      "body": "SmartSakuu est conçu pour que les décisions pédagogiques restent entre les mains des enseignants et des chefs d’établissement.",
+      "flowLabel": "L’IA rédige, l’enseignant relit, l’enseignant valide",
+      "flow": {
+        "drafts": "L’IA rédige",
+        "reviews": "L’enseignant relit",
+        "approves": "L’enseignant valide"
+      },
+      "principles": {
+        "control": {
+          "title": "Contrôle par l’enseignant",
+          "body": "Les plans de cours, fiches, quiz et activités générés par l’IA restent des brouillons tant que l’enseignant ne les a pas relus."
+        },
+        "access": {
+          "title": "Accès selon le rôle",
+          "body": "Chaque utilisateur ne voit que les informations adaptées à son rôle. Les parents voient les informations concernant leur propre enfant."
+        },
+        "oversight": {
+          "title": "Supervision humaine",
+          "body": "L’IA soutient l’enseignement, l’apprentissage et l’analyse. Elle ne prend pas, de manière autonome, de décisions à fort enjeu concernant les élèves."
+        },
+        "context": {
+          "title": "Un contexte encadré",
+          "body": "L’IA travaille avec le programme et les informations pédagogiques auxquels l’utilisateur est autorisé à accéder."
+        }
+      }
+    },
+    "Headteachers": {
+      "label": "Pour les chefs d’établissement",
+      "title": "Ce qu’un dossier unifié<br></br>change pour un chef d’établissement.",
+      "body": "Scénarios illustratifs inspirés de situations scolaires courantes. Ils seront remplacés par des témoignages approuvés de chefs d’établissement.",
+      "previous": "Récit précédent",
+      "next": "Récit suivant",
+      "dotsLabel": "Récits de chefs d’établissement",
+      "dotLabel": "Récit {index} sur {total}",
+      "play": "Lire la vidéo",
+      "stories": {
+        "kumasi": {
+          "videoLabel": "Une directrice souriante devant le tableau blanc de sa classe",
+          "quote": "Les résultats des examens blancs arrivaient dans trois tableurs différents. Avec toutes les évaluations dans un seul dossier, la direction voit quels élèves de JHS 3 décrochent en mathématiques avant le BECE, et peut organiser le soutien pendant qu’il est encore temps.",
+          "role": "Directrice, collège public (JHS)",
+          "place": "Scénario illustratif"
+        },
+        "accra": {
+          "videoLabel": "Un chef d’établissement debout dans une salle de classe pendant que les élèves travaillent",
+          "quote": "Les réunions avec les parents commençaient par la recherche de documents. Avec l’assiduité, les frais et les progrès réunis dans un seul dossier d’élève, la conversation porte directement sur ce que la famille et l’école vont faire ensuite.",
+          "role": "Promoteur et directeur, école de base privée",
+          "place": "Scénario illustratif"
+        },
+        "tamale": {
+          "videoLabel": "Un enseignant qui vérifie les travaux écrits des élèves à leur table",
+          "quote": "Quand des enseignants expérimentés sont mutés en cours d’année, ce qu’ils savent des élèves reste dans le dossier. Les nouveaux arrivants reprennent chaque classe avec son historique, et la direction voit toujours comment chaque groupe a progressé.",
+          "role": "Directeur, école de base communautaire",
+          "place": "Scénario illustratif"
+        },
+        "takoradi": {
+          "videoLabel": "Une directrice qui pose fièrement aux côtés d’une élève",
+          "quote": "Entre deux bulletins, les familles ont peu d’éléments pour se repérer. Des points d’étape tirés du même dossier permettent aux parents de voir où un soutien est nécessaire avant la fin du trimestre.",
+          "role": "Directrice adjointe, collège confessionnel (JHS)",
+          "place": "Scénario illustratif"
+        }
+      },
+      "cta": "Découvrir l’espace chef d’établissement",
+      "disclosure": "Scénarios illustratifs, et non des entretiens ou des témoignages de clients.<br></br>Vidéos issues de banques d’images, sans aucune caution implicite : <kumasi>Katerina Holmes</kumasi>, <accra>Yan Krukau</accra> et <tamale>Andy Barbour</tamale> / Pexels."
+    },
+    "Contact": {
+      "label": "Réserver une démo pour votre école",
+      "title": "Découvrez ce que SmartSakuu pourrait changer dans votre école.",
+      "body": "Nous vous montrerons comment SmartSakuu s’intègre au fonctionnement actuel de votre école — des inscriptions, des présences et des frais aux évaluations, à l’enseignement, au soutien des élèves et à la préparation aux examens.",
+      "demoEmailSubject": "Demande de démo pour une école",
+      "talk": "Parler à l’équipe SmartSakuu",
+      "closing": "Gérez l’école. Comprenez chaque élève. Améliorez les apprentissages.",
+      "imageAlt": "Des écoliers qui apprennent ensemble en classe"
+    },
+    "ContactDetails": {
+      "title": "Nous contacter",
+      "email": "E-mail",
+      "whatsapp": "WhatsApp",
+      "location": "Adresse",
+      "locationValue": "Wa, région du Haut-Ouest, Ghana"
+    },
+    "Footer": {
+      "tagline": "© {year} SmartSakuu. Infrastructure éducative numérique pour les écoles africaines.<br></br>En commençant par le Ghana. Conçu autour de l’humain."
+    },
+    "DemoDialog": {
+      "title": "Parlons de votre école.",
+      "close": "Fermer la demande de démo",
+      "intro": "Parlez-nous un peu de votre école. Nous préparerons un e-mail que vous pourrez envoyer à l’équipe SmartSakuu pour organiser une présentation guidée.",
+      "fields": {
+        "school": "Nom de l’école",
+        "name": "Votre nom",
+        "role": "Votre fonction",
+        "phone": "Téléphone ou WhatsApp",
+        "size": "Nombre d’élèves"
+      },
+      "roleOptions": {
+        "head": "Direction ou propriétaire de l’école",
+        "admin": "Personnel administratif",
+        "teacher": "Enseignant(e)",
+        "parent": "Parent",
+        "district": "District / association",
+        "other": "Autre"
+      },
+      "sizeOptions": {
+        "under200": "Moins de 200",
+        "to500": "De 200 à 500",
+        "to1000": "De 500 à 1 000",
+        "over1000": "Plus de 1 000"
+      },
+      "submit": "Préparer la demande de démo",
+      "note": "Cela ouvre votre application de messagerie. Votre demande n’est envoyée que lorsque vous envoyez l’e-mail.<br></br>Vous pouvez aussi écrire directement à <link>{email}</link>.",
+      "status": "Votre brouillon d’e-mail est prêt. Envoyez-le depuis votre application de messagerie pour finaliser votre demande. Si l’application ne s’est pas ouverte, utilisez le lien e-mail ci-dessus.",
+      "required": "Veuillez remplir ce champ.",
+      "email": {
+        "subject": "Demande de démo",
+        "school": "École",
+        "name": "Nom",
+        "role": "Fonction",
+        "phone": "Téléphone/WhatsApp",
+        "learners": "Élèves",
+        "closing": "Je souhaite organiser une démo de SmartSakuu pour mon école."
+      }
+    }
+  }
+}

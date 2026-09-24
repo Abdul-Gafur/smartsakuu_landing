@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 
+import { ContactDetailsSection } from "./contact-details-section";
 import { ContactSection } from "./contact-section";
 import { DemoRequestDialog } from "./demo-dialog/demo-request-dialog";
 import { DigitizeSection } from "./digitize-section";
@@ -44,6 +45,7 @@ export function LandingPage() {
         <ResponsibleSection />
         <HeadteachersSection />
         <ContactSection />
+        <ContactDetailsSection />
       </main>
       <SiteFooter />
       <DemoRequestDialog />

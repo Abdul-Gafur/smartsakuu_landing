@@ -9,6 +9,20 @@ const icons = {
       strokeLinejoin="round"
     />
   ),
+  check: (
+    <path
+      d="m5 12.5 4.5 4.5L19 7"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+  globe: (
+    <g strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" />
+    </g>
+  ),
   book: (
     <path
       d="M12 5v15M12 5C9 3 5 3 2 4v14c4-1 7 0 10 2 3-2 6-3 10-2V4c-3-1-7-1-10 1Z"

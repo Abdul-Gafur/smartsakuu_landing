@@ -145,8 +145,9 @@ The centralized locale configuration is in `src/i18n/routing.ts`. English
 
 Use the exports from `src/i18n/navigation.ts` instead of importing navigation
 helpers directly from Next.js when links or route changes should preserve or
-change the locale. A future language control can call the exported router with
-the current pathname and a target `locale`; no final switcher UI is included.
+change the locale. The header's language switcher links to the current page in
+each locale listed in `switcherLocales` (`src/i18n/routing.ts`); add a locale
+there once its catalog is translated.
 
 ### Adding a new language
 
@@ -167,8 +168,8 @@ the current pathname and a target `locale`; no final switcher UI is included.
 - Keep content out of components; use `next-intl` on the server by default.
 - Add only copy needed by implemented functionality.
 - Keys missing from a locale fall back to English (see `src/i18n/request.ts`).
-  The `fr`, `ar` and `pt` catalogs are currently empty, so those routes render
-  the English landing copy until translations are added.
+  The `fr` and `ar` catalogs are complete; the `pt` catalog is currently empty,
+  so that route renders the English landing copy until translations are added.
 
 ### RTL considerations
 

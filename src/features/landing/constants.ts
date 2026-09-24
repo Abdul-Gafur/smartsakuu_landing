@@ -4,6 +4,8 @@
  */
 
 export const CONTACT_EMAIL = "hello@smartsakuu.com";
+export const CONTACT_WHATSAPP = "+233 547322637";
+export const CONTACT_WHATSAPP_URL = "https://wa.me/233547322637";
 
 export const UNICEF_SOURCE_URL =
   "https://www.unicef.org/ghana/media/8671/file/EDUCATION%20BUDGET%20BRIEF%202025..pdf";

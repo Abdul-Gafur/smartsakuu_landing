@@ -1,0 +1,32 @@
+.section {
+  padding-block: 0 65px;
+}
+.title {
+  font-size: 24px;
+  letter-spacing: -0.025em;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 56px;
+  margin-block-start: 20px;
+  font-style: normal;
+  font-size: 15px;
+}
+.term {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding-block-end: 35px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .list {
+    flex-direction: column;
+  }
+}

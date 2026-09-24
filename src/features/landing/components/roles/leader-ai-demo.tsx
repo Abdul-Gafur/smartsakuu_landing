@@ -42,17 +42,57 @@ type Entry =
   | { id: number; kind: "thinking" }
   | { id: number; kind: "answer"; paragraphs: Paragraph[]; typing: boolean };
 
-/** Matches a free-text question to one of the sample answers. */
+/**
+ * Lowercases a question and strips Latin accents and Arabic diacritics and
+ * hamza marks, so "présence"/"presence" and "الأسبوع"/"الاسبوع" match alike.
+ */
+function normalizeQuestion(question: string) {
+  return question
+    .normalize("NFD")
+    .replace(/[̀-ͯـً-ٰٟ]/g, "")
+    .toLowerCase();
+}
+
+/**
+ * Matches a free-text question to one of the sample answers. Keywords cover
+ * English, French and Arabic (written in normalized form).
+ */
 function topicFor(question: string): LeaderAiTopic {
-  const q = question.toLowerCase();
-  if (/fee|pay|owe|balance|money/.test(q)) return "fees";
-  if (/attend|absen|register|missing/.test(q)) return "attendance";
-  if (/attention|today|priorit|urgent|week/.test(q)) return "attention";
-  if (/trend|chang|improv|over time|last three|terms|years/.test(q))
-    return "trend";
-  if (/topic|gap|weak|most often|common/.test(q)) return "topics";
+  const q = normalizeQuestion(question);
   if (
-    /math|learner|student|struggl|behind|score|result|exam|bece|class/.test(q)
+    /fee|pay|owe|balance|money|frais|paie|solde|argent|dette|رسوم|الدفع|مدفوع|سداد|مستحقات|رصيد|اموال|مصاريف/.test(
+      q,
+    )
+  )
+    return "fees";
+  if (
+    /attend|absen|register|missing|presence|assiduite|registre|حضور|غياب|غايب|تغيب|الدوام/.test(
+      q,
+    )
+  )
+    return "attendance";
+  if (
+    /attention|today|priorit|urgen|week|aujourd|semaine|اليوم|اولوي|عاجل|الاسبوع|انتباه|اهتمام/.test(
+      q,
+    )
+  )
+    return "attention";
+  if (
+    /trend|chang|improv|over time|last three|terms|years|tendance|evolu|progres|amelior|trimestres|annees|au fil|اتجاه|تطور|تغير|تحسن|مع الوقت|سنوات/.test(
+      q,
+    )
+  )
+    return "trend";
+  if (
+    /topic|gap|weak|most often|common|notion|sujet|theme|chapitre|lacune|faible|frequent|موضوع|مواضيع|فجو|ضعف|ضعيف|شيوع|تكرار/.test(
+      q,
+    )
+  )
+    return "topics";
+  if (
+    /math|learner|student|struggl|behind|score|result|exam|bece|class|eleve|apprenant|etudiant|difficult|retard|note|decroch|رياضيات|متعلم|طالب|طلاب|تلميذ|تلاميذ|صعوب|تعثر|متاخر|درجات|نتيج|نتائج|امتحان|اختبار/.test(
+      q,
+    )
   )
     return "learners";
   return "other";
