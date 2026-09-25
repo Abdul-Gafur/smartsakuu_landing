@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "siteName": "SmartSakuu",
-    "title": "SmartSakuu | Gérez l’école. Comprenez chaque élève. Améliorez les apprentissages.",
-    "description": "SmartSakuu fournit aux écoles à faible maturité numérique l’infrastructure nécessaire pour constituer des dossiers d’élèves fiables, puis s’appuie sur l’IA pour aider les enseignants à repérer les lacunes d’apprentissage, préparer des cours fondés sur les résultats réels de la classe, guider un apprentissage ciblé et mesurer l’efficacité du soutien apporté."
+    "title": "SmartSakuu | Logiciel de gestion scolaire avec IA",
+    "description": "Inscriptions, présences, frais et dossiers d’élèves en un seul outil, avec une IA qui aide les enseignants à repérer les lacunes et à préparer leurs cours."
   },
   "Landing": {
     "Common": {

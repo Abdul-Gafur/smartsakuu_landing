@@ -38,12 +38,12 @@ export function LandingPage() {
         <RecordSection />
         <ValueSection />
         <RolesSection />
-        <StoriesSection />
+
         <ExamSection />
         <GhanaSection />
         <MemorySection />
         <ResponsibleSection />
-        <HeadteachersSection />
+
         <ContactSection />
         <ContactDetailsSection />
       </main>

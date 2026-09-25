@@ -4,7 +4,13 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 
-import { getLocaleDirection, routing } from "@/i18n/routing";
+import { getLocaleDirection, routing, switcherLocales } from "@/i18n/routing";
+import {
+  getLanguageAlternates,
+  getSiteUrl,
+  isIndexedLocale,
+  openGraphLocales,
+} from "@/lib/seo";
 import "@/styles/globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -31,35 +37,55 @@ export async function generateMetadata({
   }
 
   const t = await getTranslations({ locale, namespace: "Metadata" });
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000");
+  const indexed = isIndexedLocale(locale);
+  // Untranslated locales render the default copy, so they point search
+  // engines at the default locale instead of competing with it.
+  const canonical = `/${indexed ? locale : routing.defaultLocale}`;
 
   return {
-    metadataBase: new URL(siteUrl),
+    metadataBase: new URL(getSiteUrl()),
     title: {
       default: t("title"),
       template: `%s | ${t("siteName")}`,
     },
     description: t("description"),
+    applicationName: t("siteName"),
+    creator: t("siteName"),
+    publisher: t("siteName"),
+    category: "education",
     openGraph: {
       type: "website",
+      url: canonical,
       siteName: t("siteName"),
       title: t("title"),
       description: t("description"),
-      locale,
+      locale: openGraphLocales[locale],
+      alternateLocale: switcherLocales
+        .filter((alternate) => alternate !== locale)
+        .map((alternate) => openGraphLocales[alternate]),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
     },
     alternates: {
-      canonical: `/${locale}`,
-      languages: Object.fromEntries(
-        routing.locales.map((supportedLocale) => [
-          supportedLocale,
-          `/${supportedLocale}`,
-        ]),
-      ),
+      canonical,
+      languages: getLanguageAlternates(),
     },
+    robots: indexed
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+          },
+        }
+      : { index: false, follow: true },
   };
 }
 

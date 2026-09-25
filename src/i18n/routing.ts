@@ -15,8 +15,9 @@ export const localeNames: Record<AppLocale, string> = {
 };
 
 /**
- * Locales offered in the language switcher. Portuguese stays out until its
- * catalog is translated, because `/pt` still renders the English copy.
+ * Locales with a translated catalog: offered in the language switcher and
+ * advertised to search engines. Portuguese stays out until its catalog is
+ * translated, because `/pt` still renders the English copy.
  */
 export const switcherLocales: readonly AppLocale[] = ["en", "fr", "ar"];
 
@@ -25,6 +26,9 @@ export const routing = defineRouting({
   defaultLocale,
   localePrefix: "always",
   localeDetection: true,
+  // hreflang alternates are emitted in the page metadata and sitemap, which
+  // leave out untranslated locales; the middleware's Link header would not.
+  alternateLinks: false,
   localeCookie: {
     name: "NEXT_LOCALE",
     sameSite: "lax",

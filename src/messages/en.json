@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "siteName": "SmartSakuu",
-    "title": "SmartSakuu | Run the school. Understand every learner. Improve learning.",
-    "description": "SmartSakuu gives low-digital-maturity schools infrastructure to create reliable learner records, then uses AI to help teachers identify learning gaps, prepare lessons informed by actual class performance, guide targeted student learning, and measure whether support worked."
+    "title": "SmartSakuu | AI-Powered School Management System for Ghana",
+    "description": "Run admissions, attendance, fees and learner records in one place, and give teachers AI to spot learning gaps, plan lessons and prepare for BECE and WASSCE."
   },
   "Landing": {
     "Common": {
@@ -462,7 +462,7 @@
     "Exam": {
       "label": "Exam preparation",
       "title": "BECE and WASSCE preparation that responds to the learner.",
-      "body": "Exam preparation should not always begin with the entire syllabus again. SmartSakuu can use assessment history and learning performance to help students focus on the areas where they need the most work.",
+      "body": "Exam preparation should not always begin with the entire syllabus again. SmartSakuu uses assessment history and learning performance to help students focus on the areas where they need the most work.",
       "resourcesLabel": "Students can access:",
       "resources": {
         "pastQuestions": "Past questions",
