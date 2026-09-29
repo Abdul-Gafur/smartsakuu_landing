@@ -26,7 +26,8 @@ stories and contact.
   takes precedence over the layered global rules.
 - **Assets.** Local images and their credits are in `public/assets/smartsakuu/`
   and are served through `next/image`. Plus Jakarta Sans is self-hosted with
-  `next/font`.
+  `next/font`; the Open Graph images, which are generated at build time, read
+  its TrueType files from `assets/fonts/` (SIL Open Font License).
 
 The demo-request dialog prepares an email to `hello@smartsakuu.com`; no
 submission backend is connected. The School AI demo answers from sample data

@@ -34,25 +34,12 @@ async function readPublicImage(src: string, mime: string) {
 }
 
 /**
- * Downloads a Google Font subset that covers only `text`. The responses are
- * cached so each locale's image is generated once, at build time, rather than
- * on every request, where a failed download would break link previews.
+ * Reads a Plus Jakarta Sans weight from `assets/fonts`. The image renderer
+ * needs TrueType files, which `next/font` does not expose, and bundling them
+ * keeps the build from depending on a font download.
  */
-async function loadGoogleFont(family: string, weight: number, text: string) {
-  const url = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(
-    family,
-  )}:wght@${weight}&text=${encodeURIComponent(text)}`;
-  const css = await (await fetch(url, { cache: "force-cache" })).text();
-  const resource = css.match(
-    /src: url\((.+?)\) format\('(opentype|truetype)'\)/,
-  );
-
-  if (resource) {
-    const response = await fetch(resource[1], { cache: "force-cache" });
-    if (response.ok) return response.arrayBuffer();
-  }
-
-  throw new Error(`Failed to load the ${family} font for the Open Graph image`);
+function readFont(file: string) {
+  return readFile(join(process.cwd(), "assets", "fonts", file));
 }
 
 /**
@@ -105,15 +92,14 @@ export default async function OpenGraphImage({
   const t = await getTranslations({ locale, namespace: "Landing" });
   const headline = t.raw("Hero.title").split("<br></br>") as string[];
   const footnote = t("Hero.footnote");
-  const text = [...headline, footnote].join(" ");
 
   const [logo, photo, fonts] = await Promise.all([
     readPublicImage(images.logo.src, "image/png"),
     readPublicImage(images.classroom.src, "image/jpeg"),
     showCopy
       ? Promise.all([
-          loadGoogleFont(fontFamily, 800, text),
-          loadGoogleFont(fontFamily, 500, text),
+          readFont("PlusJakartaSans-ExtraBold.ttf"),
+          readFont("PlusJakartaSans-Medium.ttf"),
         ])
       : null,
   ]);
