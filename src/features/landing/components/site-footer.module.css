@@ -13,6 +13,24 @@
   width: 162px;
   height: auto;
 }
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-inline-end: auto;
+}
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+}
+.links a:hover {
+  color: var(--blue);
+}
 .tagline {
   font-size: 10px;
   color: var(--muted);
@@ -25,6 +43,9 @@
     align-items: start;
     gap: 20px;
     padding-block-end: 30px;
+  }
+  .links {
+    margin-block: -12px;
   }
   .tagline {
     text-align: start;

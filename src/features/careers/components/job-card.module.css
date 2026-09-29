@@ -1,0 +1,121 @@
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px 48px;
+  align-items: center;
+  padding: 32px 34px;
+  color: inherit;
+  background: white;
+  border: 1px solid #dfe5ee;
+  border-radius: 24px;
+  border-end-start-radius: 64px;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.card:hover {
+  border-color: #b9c8e0;
+  box-shadow: 0 18px 44px rgb(17 36 72 / 8%);
+}
+.department {
+  display: block;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+.title {
+  margin-block-start: 6px;
+  color: var(--navy);
+  font-size: 25px;
+  letter-spacing: -0.03em;
+}
+.summary {
+  max-width: 64ch;
+  margin-block-start: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.meta {
+  margin-block-start: 20px;
+}
+.aside {
+  display: grid;
+  justify-items: end;
+  gap: 14px;
+}
+.deadline {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.view {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #cfd6e2;
+  border-radius: 50%;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+.arrow svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+.card:hover .arrow {
+  color: white;
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.card:hover .arrow svg {
+  transform: translateX(2px);
+}
+.arrow svg:dir(rtl) {
+  scale: -1 1;
+}
+.card:hover .arrow svg:dir(rtl) {
+  transform: translateX(-2px);
+}
+
+@media (max-width: 800px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 28px 26px;
+    border-end-start-radius: 48px;
+  }
+  .aside {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-block-start: 20px;
+    border-block-start: 1px solid #edf0f5;
+  }
+  .title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 560px) {
+  .card {
+    padding: 24px 20px 24px;
+    border-radius: 20px;
+    border-end-start-radius: 40px;
+  }
+  .summary {
+    font-size: 13px;
+  }
+}

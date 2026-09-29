@@ -17,7 +17,8 @@
         "problem": "Le problème",
         "record": "Comment ça marche",
         "roles": "L’IA en contexte",
-        "ghana": "Au Ghana"
+        "ghana": "Au Ghana",
+        "careers": "Carrières"
       },
       "openMenu": "Ouvrir le menu",
       "closeMenu": "Fermer le menu",
@@ -613,7 +614,9 @@
       "locationValue": "Wa, région du Haut-Ouest, Ghana"
     },
     "Footer": {
-      "tagline": "© {year} SmartSakuu. Infrastructure éducative numérique pour les écoles africaines.<br></br>En commençant par le Ghana. Conçu autour de l’humain."
+      "tagline": "© {year} SmartSakuu. Infrastructure éducative numérique pour les écoles africaines.<br></br>En commençant par le Ghana. Conçu autour de l’humain.",
+      "careers": "Carrières",
+      "navLabel": "Entreprise"
     },
     "DemoDialog": {
       "title": "Parlons de votre école.",
@@ -652,6 +655,120 @@
         "phone": "Téléphone/WhatsApp",
         "learners": "Élèves",
         "closing": "Je souhaite organiser une démo de SmartSakuu pour mon école."
+      }
+    }
+  },
+  "Careers": {
+    "Metadata": {
+      "title": "Carrières",
+      "description": "Rejoignez SmartSakuu et aidez les écoles du Ghana à numériser leur fonctionnement, à constituer des dossiers d’apprenants continus et à repérer plus tôt les lacunes d’apprentissage. Découvrez nos postes ouverts."
+    },
+    "Company": {
+      "about": "SmartSakuu est une plateforme d’éducation numérique alimentée par l’IA qui aide les écoles à numériser leur fonctionnement, à constituer des dossiers d’apprenants continus, à repérer plus tôt les lacunes d’apprentissage et à offrir un soutien pédagogique plus ciblé."
+    },
+    "Roles": {
+      "label": "Carrières chez SmartSakuu",
+      "title": "Trouvez votre place.",
+      "body": "Nous sommes une équipe en pleine croissance basée à Wa, dans la région du Haut-Ouest du Ghana, qui travaille surtout à distance et au plus près des écoles que nous accompagnons. Si vous voulez que votre travail change la façon dont les écoles comprennent leurs apprenants, nous serions ravis d’échanger avec vous.",
+      "count": "{count, plural, =0 {Aucun poste ouvert} one {# poste ouvert} other {# postes ouverts}}",
+      "view": "Voir le poste",
+      "deadline": "Candidater avant le {date}",
+      "empty": {
+        "title": "Aucun poste ouvert pour le moment.",
+        "body": "Nous ne recrutons pas pour un poste précis en ce moment, mais nous sommes toujours heureux de rencontrer des personnes engagées pour l’éducation."
+      }
+    },
+    "Benefits": {
+      "label": "Pourquoi rejoindre SmartSakuu",
+      "title": "Un travail qui a du sens, et de la place pour grandir.",
+      "body": "Nous offrons un environnement de travail flexible et bienveillant, pensé pour aider chacun à progresser tout en faisant un travail utile.",
+      "items": {
+        "remote": {
+          "title": "Environ 70 % à distance",
+          "body": "Travaillez là où vous êtes le plus efficace, et retrouvez-vous à Wa quand cela compte."
+        },
+        "schedule": {
+          "title": "Horaires axés sur les résultats",
+          "body": "Un emploi du temps confortable, évalué sur ce que vous accomplissez plutôt que sur les heures passées."
+        },
+        "learning": {
+          "title": "Formation financée",
+          "body": "Ressources d’apprentissage et certifications professionnelles prises en charge par SmartSakuu."
+        },
+        "experience": {
+          "title": "Une expérience variée",
+          "body": "Développez votre expérience dans l’EdTech, le SaaS, l’IA et le développement commercial."
+        },
+        "travel": {
+          "title": "Déplacements pris en charge",
+          "body": "Indemnités d’hébergement et de déplacement pour les missions approuvées hors de Wa."
+        },
+        "leave": {
+          "title": "Congé menstruel",
+          "body": "Les employées ont droit à jusqu’à trois jours de congé menstruel par mois."
+        },
+        "bonus": {
+          "title": "Primes de travail",
+          "body": "Des primes qui reconnaissent votre engagement."
+        },
+        "growth": {
+          "title": "De la place pour évoluer",
+          "body": "Prenez davantage de responsabilités, élargissez votre réseau et contribuez à la croissance de SmartSakuu au Ghana et au-delà."
+        }
+      }
+    },
+    "General": {
+      "title": "Vous ne trouvez pas le bon poste ?",
+      "body": "Envoyez-nous votre CV et quelques lignes sur la façon dont vous aimeriez contribuer à SmartSakuu.",
+      "cta": "Présentez-vous",
+      "emailSubject": "Candidature spontanée"
+    },
+    "Job": {
+      "back": "Tous les postes ouverts",
+      "closes": "Candidatures jusqu’au {date}",
+      "locationShort": "{city}, {country}",
+      "locationFull": "{city}, {region}, {country}",
+      "workplace": {
+        "onsite": "Sur site",
+        "hybrid": "Hybride",
+        "remote": "À distance"
+      },
+      "employment": {
+        "fullTime": "Temps plein",
+        "partTime": "Temps partiel",
+        "contract": "Contrat",
+        "internship": "Stage"
+      },
+      "sections": {
+        "about": "À propos de SmartSakuu",
+        "overview": "À propos du poste",
+        "responsibilities": "Vos missions",
+        "requirements": "Votre profil",
+        "niceToHave": "Atouts appréciés",
+        "outcomes": "À quoi ressemble la réussite",
+        "benefits": "Ce que nous offrons"
+      },
+      "niceToHaveNote": "Aucun de ces éléments n’est obligatoire. Si vous répondez à l’essentiel, nous vous encourageons à postuler.",
+      "glance": {
+        "title": "Le poste en bref",
+        "department": "Département",
+        "location": "Lieu",
+        "workplace": "Mode de travail",
+        "employment": "Type de contrat",
+        "opens": "Ouverture des candidatures",
+        "closes": "Date limite",
+        "interviews": "Entretiens",
+        "rolling": "Ouvert jusqu’à ce que le poste soit pourvu"
+      },
+      "apply": {
+        "title": "Postuler à ce poste",
+        "jump": "Postuler",
+        "button": "Postuler maintenant",
+        "checklistTitle": "À préparer",
+        "datesTitle": "Dates clés"
+      },
+      "more": {
+        "title": "Autres postes ouverts"
       }
     }
   }

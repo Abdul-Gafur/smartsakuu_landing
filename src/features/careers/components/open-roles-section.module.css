@@ -1,0 +1,50 @@
+.section {
+  padding-block: 64px 80px;
+}
+.intro {
+  align-items: start;
+}
+.title {
+  max-width: 14ch;
+  font-size: clamp(36px, 4vw, 56px);
+}
+.copy {
+  display: grid;
+  gap: 12px;
+  padding-block-start: 30px;
+}
+.copy p {
+  font-size: 15px;
+}
+.count {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-block-end: 18px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+}
+.count::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #dfe5ee;
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding-block: 44px 64px;
+  }
+}
+@media (max-width: 560px) {
+  .title {
+    font-size: clamp(32px, 9vw, 40px);
+  }
+  .copy {
+    padding-block-start: 0;
+  }
+  .copy p {
+    font-size: 14px;
+  }
+}

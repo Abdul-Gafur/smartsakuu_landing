@@ -1,0 +1,88 @@
+.content {
+  display: grid;
+  gap: 52px;
+  min-width: 0;
+}
+.block + .block {
+  padding-block-start: 48px;
+  border-block-start: 1px solid #e3e8f0;
+}
+.heading {
+  margin-block-end: 20px;
+  color: var(--navy);
+  font-size: 27px;
+  letter-spacing: -0.035em;
+}
+.paragraphs {
+  display: grid;
+  gap: 16px;
+}
+.paragraph {
+  max-width: 68ch;
+  font-size: 16px;
+}
+/* Each area of responsibility: its title beside its points. */
+.groups {
+  display: grid;
+}
+.group {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 16px 36px;
+  padding-block: 26px;
+  border-block-start: 1px solid #e3e8f0;
+}
+.group:first-child {
+  padding-block-start: 6px;
+  border-block-start: 0;
+}
+.group:last-child {
+  padding-block-end: 0;
+}
+.groupTitle {
+  color: var(--ink);
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+}
+.note {
+  max-width: 60ch;
+  margin-block-start: 20px;
+  padding-inline-start: 16px;
+  color: var(--navy);
+  border-inline-start: 3px solid var(--teal);
+  font-size: 14px;
+  font-weight: 600;
+}
+/* A closing panel, so the outcomes read as the point of the role. */
+.block.outcomes {
+  padding: 36px 36px 38px;
+  border: 1px solid #dfe5ee;
+  border-radius: 24px;
+  border-end-end-radius: 72px;
+}
+
+@media (max-width: 800px) {
+  .group {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+@media (max-width: 560px) {
+  .content {
+    gap: 40px;
+  }
+  .block + .block {
+    padding-block-start: 38px;
+  }
+  .heading {
+    font-size: 23px;
+  }
+  .paragraph {
+    font-size: 15px;
+  }
+  .block.outcomes {
+    padding: 26px 20px 28px;
+    border-end-end-radius: 48px;
+  }
+}

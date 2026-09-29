@@ -1,0 +1,66 @@
+.aside {
+  position: sticky;
+  inset-block-start: 116px;
+  align-self: start;
+}
+.card {
+  padding: 28px 28px 30px;
+  border: 1px solid #dfe5ee;
+  border-radius: 24px;
+  border-end-end-radius: 64px;
+}
+.title {
+  color: var(--navy);
+  font-size: 18px;
+  letter-spacing: -0.025em;
+}
+.facts {
+  margin: 18px 0 24px;
+}
+.facts div {
+  display: grid;
+  gap: 2px;
+  padding-block: 13px;
+  border-block-start: 1px solid #edf0f5;
+}
+.facts dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.facts dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+.card :global(.button) {
+  width: 100%;
+}
+
+@media (max-width: 1050px) {
+  .aside {
+    position: static;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+  }
+  .card :global(.button) {
+    width: auto;
+  }
+}
+@media (max-width: 560px) {
+  .card {
+    padding: 22px 20px 24px;
+    border-end-end-radius: 48px;
+  }
+  .facts {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+  }
+  .card :global(.button) {
+    width: 100%;
+  }
+}

@@ -17,7 +17,8 @@
         "problem": "The problem",
         "record": "How it works",
         "roles": "AI in context",
-        "ghana": "In Ghana"
+        "ghana": "In Ghana",
+        "careers": "Careers"
       },
       "openMenu": "Open menu",
       "closeMenu": "Close menu",
@@ -613,7 +614,9 @@
       "locationValue": "Wa, Upper West Region, Ghana"
     },
     "Footer": {
-      "tagline": "© {year} SmartSakuu. Digital education infrastructure for African schools.<br></br>Starting in Ghana. Built around people."
+      "tagline": "© {year} SmartSakuu. Digital education infrastructure for African schools.<br></br>Starting in Ghana. Built around people.",
+      "careers": "Careers",
+      "navLabel": "Company"
     },
     "DemoDialog": {
       "title": "Let’s talk about your school.",
@@ -652,6 +655,120 @@
         "phone": "Phone/WhatsApp",
         "learners": "Learners",
         "closing": "I would like to arrange a SmartSakuu school demo."
+      }
+    }
+  },
+  "Careers": {
+    "Metadata": {
+      "title": "Careers",
+      "description": "Join SmartSakuu and help schools across Ghana digitize their operations, build continuous learner records and see learning gaps earlier. See our open roles."
+    },
+    "Company": {
+      "about": "SmartSakuu is an AI-powered digital education platform helping schools digitize their operations, build continuous learner records, identify learning gaps earlier, and provide more targeted teaching and learning support."
+    },
+    "Roles": {
+      "label": "Careers at SmartSakuu",
+      "title": "Find where you fit.",
+      "body": "We are a growing team based in Wa, in Ghana’s Upper West Region, working mostly remotely and close to the schools we serve. If you want your work to change how schools understand their learners, we would like to hear from you.",
+      "count": "{count, plural, =0 {No open roles} one {# open role} other {# open roles}}",
+      "view": "View role",
+      "deadline": "Apply by {date}",
+      "empty": {
+        "title": "No open roles right now.",
+        "body": "We are not hiring for a specific role at the moment, but we are always glad to meet people who care about education."
+      }
+    },
+    "Benefits": {
+      "label": "Why join SmartSakuu",
+      "title": "Meaningful work, and room to grow with it.",
+      "body": "We provide a flexible and supportive working environment designed to help people grow while doing meaningful work.",
+      "items": {
+        "remote": {
+          "title": "Around 70% remote",
+          "body": "Work where you do your best work, and come together in Wa when it counts."
+        },
+        "schedule": {
+          "title": "Outcome-focused schedule",
+          "body": "A comfortable schedule, measured by what you deliver rather than the hours you log."
+        },
+        "learning": {
+          "title": "Sponsored learning",
+          "body": "Learning resources and professional certifications, paid for by SmartSakuu."
+        },
+        "experience": {
+          "title": "Broad experience",
+          "body": "Build experience across EdTech, SaaS, AI and business development."
+        },
+        "travel": {
+          "title": "Travel covered",
+          "body": "Accommodation and travel allowances for approved missions outside Wa."
+        },
+        "leave": {
+          "title": "Menstrual leave",
+          "body": "Female employees are entitled to up to three days of menstrual leave each month."
+        },
+        "bonus": {
+          "title": "Working bonuses",
+          "body": "Bonuses that recognise the work you put in."
+        },
+        "growth": {
+          "title": "Room to grow",
+          "body": "Take on greater responsibility, expand your network and help SmartSakuu grow across Ghana and beyond."
+        }
+      }
+    },
+    "General": {
+      "title": "Don’t see the right role?",
+      "body": "Send us your CV and a short note on how you would like to contribute to SmartSakuu.",
+      "cta": "Introduce yourself",
+      "emailSubject": "General application"
+    },
+    "Job": {
+      "back": "All open roles",
+      "closes": "Applications close {date}",
+      "locationShort": "{city}, {country}",
+      "locationFull": "{city}, {region}, {country}",
+      "workplace": {
+        "onsite": "On-site",
+        "hybrid": "Hybrid",
+        "remote": "Remote"
+      },
+      "employment": {
+        "fullTime": "Full-time",
+        "partTime": "Part-time",
+        "contract": "Contract",
+        "internship": "Internship"
+      },
+      "sections": {
+        "about": "About SmartSakuu",
+        "overview": "About the role",
+        "responsibilities": "What you’ll do",
+        "requirements": "What you’ll bring",
+        "niceToHave": "Nice to have",
+        "outcomes": "What success looks like",
+        "benefits": "What we offer"
+      },
+      "niceToHaveNote": "None of these are required. If you meet most of the essentials, we encourage you to apply.",
+      "glance": {
+        "title": "Role at a glance",
+        "department": "Department",
+        "location": "Location",
+        "workplace": "Work arrangement",
+        "employment": "Employment type",
+        "opens": "Applications open",
+        "closes": "Applications close",
+        "interviews": "Interviews",
+        "rolling": "Open until filled"
+      },
+      "apply": {
+        "title": "Apply for this role",
+        "jump": "Apply for this role",
+        "button": "Apply now",
+        "checklistTitle": "Have these ready",
+        "datesTitle": "Key dates"
+      },
+      "more": {
+        "title": "Other open roles"
       }
     }
   }

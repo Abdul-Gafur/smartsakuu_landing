@@ -1,0 +1,38 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 88px;
+  padding-block: 64px 80px;
+}
+.benefits {
+  padding-block-start: 0;
+}
+.benefits > :global(.wrap) {
+  padding-block-start: 72px;
+  border-block-start: 1px solid #e3e8f0;
+}
+.more {
+  padding-block: 0 72px;
+}
+.moreTitle {
+  margin-block-end: 24px;
+  color: var(--navy);
+  font-size: 27px;
+  letter-spacing: -0.035em;
+}
+
+@media (max-width: 1050px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+@media (max-width: 560px) {
+  .layout {
+    gap: 40px;
+    padding-block: 44px 60px;
+  }
+  .benefits > :global(.wrap) {
+    padding-block-start: 56px;
+  }
+}

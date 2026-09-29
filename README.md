@@ -41,6 +41,26 @@ interviews before describing them as real school testimonials. All motion
 respects the user's reduced-motion setting. The production build uses webpack,
 as configured in the original foundation.
 
+## Careers
+
+The careers page is served at `/[locale]/careers`, and each role at
+`/[locale]/careers/[slug]`. Everything lives in `src/features/careers`.
+
+- **Job postings** are typed by `Job` in `types.ts` and read only through
+  `getOpenJobs` and `getJob` in `services/jobs.ts`. They currently serve the
+  local postings in `data/jobs.ts`; to connect a backend, replace those two
+  function bodies with API requests and map the responses onto `Job`. Pages,
+  metadata, `JobPosting` structured data and the sitemap follow automatically,
+  and roles added after a build render on their first request.
+- **Every role uses the same layout** (`components/job-detail/job-detail.tsx`):
+  header, posting body, "role at a glance" sidebar, benefits, apply section
+  (with the application timeline) and other open roles. Optional parts
+  (`niceToHave`, `outcomes`, `closesAt`, `interviewPeriod`) render only when
+  present. Candidates apply through the external form at `application.url`.
+- **Page copy** (headings, labels, benefits) lives in the `Careers` message
+  namespace. Postings keep the language they are written in, marked with `lang`
+  and `dir` on pages in other languages.
+
 ## Prerequisites
 
 - Node.js 20.9 or newer

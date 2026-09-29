@@ -8,7 +8,7 @@ import styles from "./site-header.module.css";
 
 type HeaderNavProps = {
   label: string;
-  links: { href: string; label: string }[];
+  links: { href: string; label: string; current?: boolean }[];
   openLabel: string;
   closeLabel: string;
   /** Rendered at the end of the link list; shown only in the collapsed menu. */
@@ -50,7 +50,12 @@ export function HeaderNav({
         aria-label={label}
       >
         {links.map((link) => (
-          <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+          <a
+            key={link.href}
+            href={link.href}
+            aria-current={link.current ? "page" : undefined}
+            onClick={() => setOpen(false)}
+          >
             {link.label}
           </a>
         ))}

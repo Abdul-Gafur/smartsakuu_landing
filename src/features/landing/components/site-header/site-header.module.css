@@ -25,12 +25,14 @@
   gap: 28px;
 }
 .navLinks a {
+  white-space: nowrap;
   text-decoration: none;
   font-size: 12px;
   font-weight: 650;
   padding-block: 12px;
 }
-.navLinks a:hover {
+.navLinks a:hover,
+.navLinks a[aria-current="page"] {
   color: var(--blue);
 }
 /* Keeps the language switcher right beside the demo button. */
@@ -119,6 +121,11 @@
   border-radius: 4px;
 }
 
+@media (max-width: 1200px) {
+  .navLinks {
+    gap: 18px;
+  }
+}
 @media (max-width: 1050px) {
   .navLinks {
     gap: 12px;
@@ -140,7 +147,8 @@
     display: none;
   }
 }
-@media (max-width: 800px) {
+/* Collapses before the page layouts do: five links need the room. */
+@media (max-width: 920px) {
   .inner {
     height: 74px;
   }
