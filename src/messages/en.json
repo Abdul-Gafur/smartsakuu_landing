@@ -771,5 +771,13 @@
         "title": "Other open roles"
       }
     }
+  },
+  "NotFound": {
+    "metaTitle": "Page not found",
+    "label": "Error 404",
+    "title": "We couldn’t find that page.",
+    "body": "The link may be out of date, or the page may have moved. Start again from the homepage, or see the roles we are hiring for.",
+    "home": "Go to the homepage",
+    "careers": "See open roles"
   }
 }

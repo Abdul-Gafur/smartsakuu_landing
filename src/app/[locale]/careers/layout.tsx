@@ -2,7 +2,7 @@ import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import { CareersShell } from "@/features/careers/components/careers-shell";
+import { SiteShell } from "@/features/landing/components/site-shell";
 import { routing } from "@/i18n/routing";
 
 export default async function CareersLayout({
@@ -17,5 +17,5 @@ export default async function CareersLayout({
 
   setRequestLocale(locale);
 
-  return <CareersShell>{children}</CareersShell>;
+  return <SiteShell>{children}</SiteShell>;
 }

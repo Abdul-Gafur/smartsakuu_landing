@@ -1,0 +1,23 @@
+.section {
+  padding-block: 96px 120px;
+}
+.title {
+  max-width: 16ch;
+  color: var(--navy);
+  font-size: clamp(36px, 4vw, 56px);
+}
+.body {
+  max-width: 56ch;
+  margin-block-start: 22px;
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding-block: 56px 80px;
+  }
+}
+@media (max-width: 560px) {
+  .title {
+    font-size: clamp(32px, 9vw, 40px);
+  }
+}

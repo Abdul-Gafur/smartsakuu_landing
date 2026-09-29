@@ -771,5 +771,13 @@
         "title": "Autres postes ouverts"
       }
     }
+  },
+  "NotFound": {
+    "metaTitle": "Page introuvable",
+    "label": "Erreur 404",
+    "title": "Nous n’avons pas trouvé cette page.",
+    "body": "Le lien est peut-être obsolète, ou la page a été déplacée. Repartez de l’accueil, ou découvrez les postes pour lesquels nous recrutons.",
+    "home": "Retour à l’accueil",
+    "careers": "Voir les postes ouverts"
   }
 }

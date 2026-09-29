@@ -1,17 +1,19 @@
 import { useLocale, useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
-import { DemoDialogProvider } from "@/features/landing/components/demo-dialog/demo-dialog-context";
-import { DemoRequestDialog } from "@/features/landing/components/demo-dialog/demo-request-dialog";
-import { SiteFooter } from "@/features/landing/components/site-footer";
-import { SiteHeader } from "@/features/landing/components/site-header/site-header";
 import { getPathname } from "@/i18n/navigation";
 
+import { DemoDialogProvider } from "./demo-dialog/demo-dialog-context";
+import { DemoRequestDialog } from "./demo-dialog/demo-request-dialog";
+import { SiteFooter } from "./site-footer";
+import { SiteHeader } from "./site-header/site-header";
+
 /**
- * The site header, footer and demo dialog around every careers page. Header
- * and footer section links point back to the landing page.
+ * The site header, footer and demo dialog around pages other than the landing
+ * page, such as careers and the 404 page. Header and footer section links
+ * point back to the landing page.
  */
-export function CareersShell({ children }: { children: ReactNode }) {
+export function SiteShell({ children }: { children: ReactNode }) {
   const t = useTranslations("Landing.Common");
   const locale = useLocale();
   const home = getPathname({ href: "/", locale });
