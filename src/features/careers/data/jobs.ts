@@ -98,7 +98,7 @@ export const jobs: Job[] = [
     ],
     application: {
       // TODO: replace with the application form link.
-      url: "https://forms.gle/REPLACE_WITH_FORM_ID",
+      url: "https://forms.gle/AgSQBdYWFaEKCEVy7",
       checklist: [
         "Your CV.",
         "A short note, no longer than a page, on why this role and why SmartSakuu.",
