@@ -7,7 +7,7 @@ import type { Job } from "../types";
  */
 export const jobs: Job[] = [
   {
-    slug: "sales-and-marketing-associate",
+    slug: "sales-marketing",
     title: "Sales & Marketing Associate",
     department: "Sales and Marketing",
     language: "en",
