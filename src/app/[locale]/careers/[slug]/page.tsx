@@ -9,8 +9,8 @@ import { getCareersPageMetadata } from "@/features/careers/lib/metadata";
 import { getJobPostingStructuredData } from "@/features/careers/lib/structured-data";
 import { getJob, getOpenJobs } from "@/features/careers/services/jobs";
 import { serializeJsonLd } from "@/features/landing/lib/structured-data";
-import { defaultLocale, routing, type AppLocale } from "@/i18n/routing";
-import { getSiteUrl, isIndexedLocale } from "@/lib/seo";
+import { defaultLocale, routing } from "@/i18n/routing";
+import { getSiteUrl } from "@/lib/seo";
 
 /**
  * Pre-renders every role known at build time. Roles added later (for example
@@ -57,12 +57,10 @@ export async function generateMetadata({
     pathname: getJobPath(job.slug),
     title: job.title,
     description: job.summary,
+    // The posting is written in one language; other locales only translate
+    // the page around it, so they defer to the posting's own locale.
+    contentLocale: job.language,
   });
-}
-
-function getCanonicalUrl(locale: AppLocale, slug: string) {
-  const canonicalLocale = isIndexedLocale(locale) ? locale : defaultLocale;
-  return `${getSiteUrl()}/${canonicalLocale}${getJobPath(slug)}`;
 }
 
 export default async function Page({
@@ -75,17 +73,23 @@ export default async function Page({
   const otherJobs = (await getOpenJobs(locale)).filter(
     (other) => other.slug !== job.slug,
   );
-  const structuredData = getJobPostingStructuredData(
-    job,
-    getCanonicalUrl(locale, job.slug),
-  );
+  // Only the canonical copy describes the posting, so job search sees it once.
+  const structuredData =
+    locale === job.language
+      ? getJobPostingStructuredData(
+          job,
+          `${getSiteUrl()}/${job.language}${getJobPath(job.slug)}`,
+        )
+      : null;
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(structuredData) }}
-      />
+      {structuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(structuredData) }}
+        />
+      )}
       <JobDetail job={job} otherJobs={otherJobs} />
     </>
   );
