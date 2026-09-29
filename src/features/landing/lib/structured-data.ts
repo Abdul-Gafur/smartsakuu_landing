@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
-import { defaultLocale, switcherLocales, type AppLocale } from "@/i18n/routing";
-import { getSiteUrl, isIndexedLocale } from "@/lib/seo";
+import { switcherLocales, type AppLocale } from "@/i18n/routing";
+import { getSiteUrl } from "@/lib/seo";
 
 import {
   CONTACT_EMAIL,
@@ -21,7 +21,7 @@ export async function getLandingStructuredData(locale: AppLocale) {
   ]);
 
   const siteUrl = getSiteUrl();
-  const pageUrl = `${siteUrl}/${isIndexedLocale(locale) ? locale : defaultLocale}`;
+  const pageUrl = `${siteUrl}/${locale}`;
   const organizationId = `${siteUrl}/#organization`;
   const websiteId = `${siteUrl}/#website`;
   const softwareId = `${siteUrl}/#software`;

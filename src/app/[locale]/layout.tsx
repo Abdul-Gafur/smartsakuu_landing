@@ -38,10 +38,10 @@ export async function generateMetadata({
   }
 
   const t = await getTranslations({ locale, namespace: "Metadata" });
+  // Untranslated locales render the default copy, so they are kept out of the
+  // index (see `robots`) rather than competing with the default locale.
   const indexed = isIndexedLocale(locale);
-  // Untranslated locales render the default copy, so they point search
-  // engines at the default locale instead of competing with it.
-  const canonical = `/${indexed ? locale : routing.defaultLocale}`;
+  const canonical = `/${locale}`;
 
   return {
     metadataBase: new URL(getSiteUrl()),
