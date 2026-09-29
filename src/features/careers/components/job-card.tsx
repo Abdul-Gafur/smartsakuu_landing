@@ -10,8 +10,14 @@ import type { JobSummary } from "../types";
 import styles from "./job-card.module.css";
 import { JobMeta } from "./job-meta";
 
+type JobCardProps = {
+  job: JobSummary;
+  /** The role title's heading level, one below the list's own heading. */
+  headingLevel?: "h2" | "h3";
+};
+
 /** One open role in a list, linking to its detail page. */
-export function JobCard({ job }: { job: JobSummary }) {
+export function JobCard({ job, headingLevel: Heading = "h3" }: JobCardProps) {
   const t = useTranslations("Careers.Roles");
   const format = useFormatter();
   const locale = useLocale();
@@ -23,9 +29,9 @@ export function JobCard({ job }: { job: JobSummary }) {
         <span className={styles.department} {...language}>
           {job.department}
         </span>
-        <h3 className={styles.title} {...language}>
+        <Heading className={styles.title} {...language}>
           {job.title}
-        </h3>
+        </Heading>
         <p className={styles.summary} {...language}>
           {job.summary}
         </p>

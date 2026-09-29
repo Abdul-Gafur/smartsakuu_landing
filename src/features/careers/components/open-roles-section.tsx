@@ -32,7 +32,8 @@ export function OpenRolesSection({ jobs }: { jobs: JobSummary[] }) {
         <p className={styles.count}>
           {t("Roles.count", { count: jobs.length })}
         </p>
-        <JobList jobs={jobs} />
+        {/* The roles sit directly under the page's h1. */}
+        <JobList jobs={jobs} headingLevel="h2" />
       </div>
     </section>
   );
