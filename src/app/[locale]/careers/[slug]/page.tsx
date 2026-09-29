@@ -6,7 +6,10 @@ import { notFound } from "next/navigation";
 import { JobDetail } from "@/features/careers/components/job-detail/job-detail";
 import { getJobPath } from "@/features/careers/constants";
 import { getCareersPageMetadata } from "@/features/careers/lib/metadata";
-import { getJobPostingStructuredData } from "@/features/careers/lib/structured-data";
+import {
+  getCareersBreadcrumbs,
+  getJobPostingStructuredData,
+} from "@/features/careers/lib/structured-data";
 import { getJob, getOpenJobs } from "@/features/careers/services/jobs";
 import { serializeJsonLd } from "@/features/landing/lib/structured-data";
 import { defaultLocale, routing } from "@/i18n/routing";
@@ -73,23 +76,29 @@ export default async function Page({
   const otherJobs = (await getOpenJobs(locale)).filter(
     (other) => other.slug !== job.slug,
   );
-  // Only the canonical copy describes the posting, so job search sees it once.
-  const structuredData =
-    locale === job.language
-      ? getJobPostingStructuredData(
-          job,
-          `${getSiteUrl()}/${job.language}${getJobPath(job.slug)}`,
-        )
-      : null;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      await getCareersBreadcrumbs(locale, job),
+      // Only the canonical copy describes the posting, so job search sees it
+      // once.
+      ...(locale === job.language
+        ? [
+            getJobPostingStructuredData(
+              job,
+              `${getSiteUrl()}/${job.language}${getJobPath(job.slug)}`,
+            ),
+          ]
+        : []),
+    ],
+  };
 
   return (
     <>
-      {structuredData && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: serializeJsonLd(structuredData) }}
-        />
-      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(structuredData) }}
+      />
       <JobDetail job={job} otherJobs={otherJobs} />
     </>
   );

@@ -6,7 +6,9 @@ import { notFound } from "next/navigation";
 import { CareersPage } from "@/features/careers/components/careers-page";
 import { CAREERS_PATH } from "@/features/careers/constants";
 import { getCareersPageMetadata } from "@/features/careers/lib/metadata";
+import { getCareersBreadcrumbs } from "@/features/careers/lib/structured-data";
 import { getOpenJobs } from "@/features/careers/services/jobs";
+import { serializeJsonLd } from "@/features/landing/lib/structured-data";
 import { routing } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -37,7 +39,22 @@ export default async function Page({ params }: PageProps<"/[locale]/careers">) {
 
   setRequestLocale(locale);
 
-  const jobs = await getOpenJobs(locale);
+  const [jobs, breadcrumbs] = await Promise.all([
+    getOpenJobs(locale),
+    getCareersBreadcrumbs(locale),
+  ]);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [breadcrumbs],
+  };
 
-  return <CareersPage jobs={jobs} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(structuredData) }}
+      />
+      <CareersPage jobs={jobs} />
+    </>
+  );
 }

@@ -33,6 +33,8 @@ export async function getLandingStructuredData(locale: AppLocale) {
         "@type": "Organization",
         "@id": organizationId,
         name: tMeta("siteName"),
+        // TODO(seo): add `legalName` and `sameAs` (the official LinkedIn,
+        // Facebook, X and similar profile URLs) once they are confirmed.
         url: siteUrl,
         logo: {
           "@type": "ImageObject",

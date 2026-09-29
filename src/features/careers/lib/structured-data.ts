@@ -1,5 +1,9 @@
+import { getTranslations } from "next-intl/server";
+
+import type { AppLocale } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/seo";
 
+import { CAREERS_PATH, getJobPath } from "../constants";
 import type { EmploymentType, Job } from "../types";
 
 const schemaEmploymentTypes = {
@@ -33,16 +37,25 @@ function describeJob(job: Job) {
   ].join("");
 }
 
-/** schema.org `JobPosting`, so the role can appear in job search results. */
+/**
+ * schema.org `JobPosting`, so the role can appear in job search results. Like
+ * the other helpers here it returns a node for a page's `@graph`.
+ */
 export function getJobPostingStructuredData(job: Job, pageUrl: string) {
   const siteUrl = getSiteUrl();
 
+  // TODO(seo): add `baseSalary` once a pay range can be published; Google's
+  // job search recommends it and shows it in results.
   return {
-    "@context": "https://schema.org",
     "@type": "JobPosting",
     title: job.title,
     description: describeJob(job),
     url: pageUrl,
+    identifier: {
+      "@type": "PropertyValue",
+      name: "SmartSakuu",
+      value: job.slug,
+    },
     datePosted: job.opensAt,
     ...(job.closesAt && { validThrough: job.closesAt }),
     employmentType: schemaEmploymentTypes[job.employmentType],
@@ -72,5 +85,36 @@ export function getJobPostingStructuredData(job: Job, pageUrl: string) {
         name: job.location.country,
       },
     }),
+  };
+}
+
+/**
+ * schema.org `BreadcrumbList` for a careers page: home, careers and, on a job
+ * page, the role.
+ */
+export async function getCareersBreadcrumbs(locale: AppLocale, job?: Job) {
+  const t = await getTranslations({ locale, namespace: "Landing" });
+  const siteUrl = getSiteUrl();
+  const crumbs = [
+    { name: t("Common.brandName"), url: `${siteUrl}/${locale}` },
+    { name: t("Footer.careers"), url: `${siteUrl}/${locale}${CAREERS_PATH}` },
+    ...(job
+      ? [
+          {
+            name: job.title,
+            url: `${siteUrl}/${locale}${getJobPath(job.slug)}`,
+          },
+        ]
+      : []),
+  ];
+
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.url,
+    })),
   };
 }
