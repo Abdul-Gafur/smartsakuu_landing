@@ -8,6 +8,7 @@ import { getLocaleDirection, routing, switcherLocales } from "@/i18n/routing";
 import {
   getLanguageAlternates,
   getSiteUrl,
+  isIndexableDeployment,
   isIndexedLocale,
   openGraphLocales,
 } from "@/lib/seo";
@@ -73,19 +74,21 @@ export async function generateMetadata({
       canonical,
       languages: getLanguageAlternates(),
     },
-    robots: indexed
-      ? {
-          index: true,
-          follow: true,
-          googleBot: {
+    // Pages nested under this layout inherit these rules.
+    robots:
+      indexed && isIndexableDeployment()
+        ? {
             index: true,
             follow: true,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-            "max-video-preview": -1,
-          },
-        }
-      : { index: false, follow: true },
+            googleBot: {
+              index: true,
+              follow: true,
+              "max-image-preview": "large",
+              "max-snippet": -1,
+              "max-video-preview": -1,
+            },
+          }
+        : { index: false, follow: true },
   };
 }
 

@@ -109,8 +109,11 @@ pnpm build
 pnpm start
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` to the canonical public origin before building a
-deployment so canonical and alternate metadata URLs resolve correctly.
+Canonical, hreflang, Open Graph, sitemap and structured data URLs use the
+production origin, `https://www.smartsakuu.com` (`src/lib/seo.ts`), in every
+build, so preview deployments point search engines at production. Vercel
+preview and development deployments (`VERCEL_ENV` other than `production`) are
+also served with `noindex`.
 
 ## Project structure
 
@@ -153,9 +156,9 @@ feature abstractions until a concrete product requirement needs them.
 
 Current variable:
 
-| Name                   | Required                  | Purpose                                          |
-| ---------------------- | ------------------------- | ------------------------------------------------ |
-| `NEXT_PUBLIC_SITE_URL` | Recommended in production | Canonical public origin used by the metadata API |
+| Name                   | Required | Purpose                                                                                           |
+| ---------------------- | -------- | ------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | No       | Overrides the canonical origin (defaults to production, or `http://localhost:3000` in `next dev`) |
 
 ## Internationalization
 
