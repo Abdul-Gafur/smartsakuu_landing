@@ -13,6 +13,11 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+/** Generates each locale's image at build time. */
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 const headlineSize = 58;
 const footnoteSize = 24;
 
@@ -28,18 +33,22 @@ async function readPublicImage(src: string, mime: string) {
   return `data:${mime};base64,${data.toString("base64")}`;
 }
 
-/** Downloads a Google Font subset that covers only `text`. */
+/**
+ * Downloads a Google Font subset that covers only `text`. The responses are
+ * cached so each locale's image is generated once, at build time, rather than
+ * on every request, where a failed download would break link previews.
+ */
 async function loadGoogleFont(family: string, weight: number, text: string) {
   const url = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(
     family,
   )}:wght@${weight}&text=${encodeURIComponent(text)}`;
-  const css = await (await fetch(url)).text();
+  const css = await (await fetch(url, { cache: "force-cache" })).text();
   const resource = css.match(
     /src: url\((.+?)\) format\('(opentype|truetype)'\)/,
   );
 
   if (resource) {
-    const response = await fetch(resource[1]);
+    const response = await fetch(resource[1], { cache: "force-cache" });
     if (response.ok) return response.arrayBuffer();
   }
 
