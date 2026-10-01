@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -13,6 +14,13 @@ import {
   openGraphLocales,
 } from "@/lib/seo";
 import "@/styles/globals.css";
+
+const GA_MEASUREMENT_ID = "G-41K114TKR9";
+
+// Only production builds of the production deployment report to Analytics, so
+// local development and preview deployments don't skew the numbers.
+const analyticsEnabled =
+  process.env.NODE_ENV === "production" && isIndexableDeployment();
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
@@ -115,6 +123,7 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
+      {analyticsEnabled && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   );
 }
