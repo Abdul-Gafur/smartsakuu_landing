@@ -20,9 +20,9 @@ export const jobs: Job[] = [
     workplaceType: "hybrid",
     employmentType: "fullTime",
     opensAt: "2026-09-30",
-    closesAt: "2026-10-20",
+    closesAt: "2026-10-25",
     // The last week of October.
-    interviewPeriod: { start: "2026-10-26", end: "2026-10-30" },
+    interviewPeriod: { start: "2026-10-30", end: "2026-11-04" },
     summary:
       "Drive school acquisition, partnerships, brand visibility and revenue growth as SmartSakuu expands across Ghana.",
     overview: [
